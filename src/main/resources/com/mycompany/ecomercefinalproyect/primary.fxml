@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.PrimaryController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.PrimaryController">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <HBox prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <Pane prefHeight="720.0" prefWidth="640.0" styleClass="lado-verde" stylesheets="@login.css" />
+            <Pane prefHeight="720.0" prefWidth="640.0" styleClass="lado-claro" stylesheets="@login.css" />
+         </children>
+      </HBox>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" mouseTransparent="true" opacity="0.15" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@patron.png" />
+         </image>
+      </ImageView>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="356.0" spacing="7.0" styleClass="tarjeta" stylesheets="@login.css">
+         <padding>
+            <Insets bottom="35.0" left="50.0" right="50.0" top="35.0" />
+         </padding>
+         <children>
+            <Label styleClass="titulo" stylesheets="@login.css" text="Iniciar sesion">
+               <VBox.margin>
+                  <Insets bottom="24.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="etiqueta" stylesheets="@login.css" text="Usuario" />
+            <TextField prefHeight="45.0" promptText="Nombre de usuario" styleClass="campo" stylesheets="@login.css" />
+            <Label styleClass="etiqueta" stylesheets="@login.css" text="Contraseña">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField prefHeight="45.0" promptText="*******************" styleClass="campo" stylesheets="@login.css" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="45.0" styleClass="boton-ingresar" stylesheets="@login.css" text="Ingresar">
+               <VBox.margin>
+                  <Insets top="31.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Hyperlink styleClass="enlace" stylesheets="@login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
+         <StackPane.margin>
+            <Insets bottom="14.0" right="17.0" />
+         </StackPane.margin>
+      </Hyperlink>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</StackPane>
