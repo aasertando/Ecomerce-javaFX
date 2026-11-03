@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.PrimaryController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <ImageView id="fondoBlanco" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/fondoBlanco.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane id="barraPrincipal" prefHeight="86.79" prefWidth="1280.0" style="-fx-background-color: #1E4B2C;">
+         <children>
+            <ImageView id="logoMobutu" fitHeight="75.0" fitWidth="223.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagenes/logoMobutu.png" />
+               </image>
+            </ImageView>
+            <TextField id="txtBusqueda" layoutX="236.71" layoutY="15.78" prefHeight="55.23" prefWidth="591.78" promptText="Buscar productos...">
+               <font>
+                  <Font size="23.67" />
+               </font>
+            </TextField>
+            <Button id="btnBuscar" layoutX="836.38" layoutY="15.78" mnemonicParsing="false" prefHeight="55.23" prefWidth="110.47" style="-fx-background-color: #F59E0B;" styleClass="style.css" text="Buscar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.7" />
+               </font>
+            </Button>
+            <Button id="btnCarrito" layoutX="966.0" layoutY="16.0" mnemonicParsing="false" prefHeight="55.23" prefWidth="130.19" style="-fx-background-color: #145C34;" text="Carrito(4)" textFill="WHITE">
+               <font>
+                  <Font size="21.7" />
+               </font>
+            </Button>
+            <Button id="btnUsuario" layoutX="1115.0" layoutY="24.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: #145C34;" text="Usuario" textFill="WHITE">
+               <font>
+                  <Font size="21.7" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</AnchorPane>
