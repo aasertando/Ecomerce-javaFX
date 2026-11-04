@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView id="fondoBlanco" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
@@ -17,11 +16,7 @@
       </ImageView>
       <AnchorPane id="barraPrincipal" prefHeight="86.79" prefWidth="1280.0" style="-fx-background-color: #1E4B2C;">
          <children>
-            <ImageView id="logoMobutu" fitHeight="75.0" fitWidth="223.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Imagenes/logoMobutu.png" />
-               </image>
-            </ImageView>
+            <ImageView id="logoMobutu" fitHeight="75.0" fitWidth="223.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
             <TextField id="txtBusqueda" layoutX="236.71" layoutY="15.78" prefHeight="55.23" prefWidth="591.78" promptText="Buscar productos...">
                <font>
                   <Font size="23.67" />
