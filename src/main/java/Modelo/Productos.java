@@ -9,20 +9,30 @@ package Modelo;
  * @author garci
  */
 public class Productos {
+
+    private int id;
     private String nombre;
     private String categoria;
-    private int Stock;
     private double precio;
     private String descripción;
     private String imagenURL;
 
-    public Productos(String nombre, String categoria, int Stock, double precio, String descripción, String imagenURL) {
+    public Productos(int id, String nombre, String categoria, double precio, String descripción, String imagenURL) {
+
+        this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
-        this.Stock = Stock;
         this.precio = precio;
         this.descripción = descripción;
         this.imagenURL = imagenURL;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -39,14 +49,6 @@ public class Productos {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-    }
-
-    public int getStock() {
-        return Stock;
-    }
-
-    public void setStock(int Stock) {
-        this.Stock = Stock;
     }
 
     public double getPrecio() {
@@ -72,6 +74,5 @@ public class Productos {
     public void setImagenURL(String imagenURL) {
         this.imagenURL = imagenURL;
     }
-    
-    
+
 }
