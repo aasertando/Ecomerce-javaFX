@@ -13,12 +13,12 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.LoginController">
    <children>
-      <HBox prefHeight="720.0" prefWidth="1280.0" stylesheets="@../estilos/Login.css">
+      <HBox prefHeight="720.0" prefWidth="1280.0" stylesheets="@Login.css">
          <children>
-            <Pane prefHeight="720.0" prefWidth="640.0" stylesheets="@../estilos/Login.css" />
-            <Pane prefHeight="720.0" prefWidth="640.0" styleClass="lado-claro" stylesheets="@/styles/Login.css" />
+            <Pane prefHeight="720.0" prefWidth="640.0" styleClass="lado-verde" stylesheets="@Login.css" />
+            <Pane prefHeight="720.0" prefWidth="640.0" styleClass="lado-claro" stylesheets="@Login.css" />
          </children>
       </HBox>
       <ImageView fitHeight="720.0" fitWidth="1280.0" mouseTransparent="true" opacity="0.15" pickOnBounds="true" preserveRatio="true">
@@ -26,32 +26,32 @@
             <Image url="@../../../fotos/patron.png" />
          </image>
       </ImageView>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="356.0" spacing="7.0" styleClass="tarjeta" stylesheets="@login.css">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="356.0" spacing="7.0" styleClass="tarjeta" stylesheets="@Login.css">
          <padding>
             <Insets bottom="35.0" left="50.0" right="50.0" top="35.0" />
          </padding>
          <children>
-            <Label styleClass="titulo" stylesheets="@login.css" text="Iniciar sesion">
+            <Label styleClass="titulo" stylesheets="@Login.css" text="Iniciar sesion">
                <VBox.margin>
                   <Insets bottom="24.0" />
                </VBox.margin>
             </Label>
-            <Label styleClass="etiqueta" stylesheets="@login.css" text="Usuario" />
-            <TextField prefHeight="45.0" promptText="Nombre de usuario" styleClass="campo" stylesheets="@login.css" />
-            <Label styleClass="etiqueta" stylesheets="@login.css" text="Contraseña">
+            <Label styleClass="etiqueta" stylesheets="@Login.css" text="Usuario" />
+            <TextField prefHeight="45.0" promptText="Nombre de usuario" styleClass="campo" stylesheets="@Login.css" />
+            <Label styleClass="etiqueta" stylesheets="@Login.css" text="Contraseña">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <PasswordField prefHeight="45.0" promptText="*******************" styleClass="campo" stylesheets="@login.css" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="45.0" styleClass="boton-ingresar" stylesheets="@login.css" text="Ingresar">
+            <PasswordField prefHeight="45.0" promptText="*******************" styleClass="campo" stylesheets="@Login.css" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="45.0" styleClass="boton-ingresar" stylesheets="@Login.css" text="Ingresar">
                <VBox.margin>
                   <Insets top="31.0" />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
-      <Hyperlink styleClass="enlace" stylesheets="@login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
+      <Hyperlink styleClass="enlace" stylesheets="@Login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
          <StackPane.margin>
             <Insets bottom="14.0" right="17.0" />
          </StackPane.margin>
