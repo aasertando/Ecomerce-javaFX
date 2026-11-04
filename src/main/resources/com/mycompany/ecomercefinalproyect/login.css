@@ -1,0 +1,49 @@
+.lado-verde {
+    -fx-background-color: #1f5a2d;
+}
+
+.lado-claro {
+    -fx-background-color: #f4f4ef;
+}
+
+.tarjeta {
+    -fx-background-color: white;
+    -fx-background-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 28, 0.15, 0, 7);
+}
+
+.titulo {
+    -fx-font-size: 26px;
+    -fx-text-fill: #1a1a1a;
+}
+
+.etiqueta {
+    -fx-font-size: 17px;
+    -fx-text-fill: #555555;
+}
+
+.campo {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 2.5;
+    -fx-border-radius: 10;
+    -fx-font-size: 19px;
+    -fx-prompt-text-fill: #8aa39a;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.boton-ingresar {
+    -fx-background-color: #5468ff;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-cursor: hand;
+}
+
+.enlace {
+    -fx-text-fill: #8c8cff;
+    -fx-font-size: 17px;
+    -fx-border-color: transparent;
+}
