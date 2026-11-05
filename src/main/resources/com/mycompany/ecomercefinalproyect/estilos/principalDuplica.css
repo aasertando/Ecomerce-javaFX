@@ -1,0 +1,101 @@
+.boton-menu-categoria {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+    -fx-border-color: transparent;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.boton-menu-categoria:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+}
+
+.boton-menu-categoria:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+    -fx-text-fill: white;
+}
+
+#contenidoCentro {
+    -fx-background-image: url(../img/fondoBlanco.jpg);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.boton-buscar {
+    -fx-background-color: #F39C12;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+    /*-fx-padding: 12;*/
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.boton-buscar:hover {
+    -fx-background-color: #E67E22;
+    -fx-text-fill: white;
+}
+
+.boton-buscar:pressed {
+    -fx-background-color: #D35400;
+    -fx-text-fill: white;
+}
+
+.boton-carrito {
+    -fx-background-color: #145C34;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.boton-carrito:hover {
+    -fx-background-color: #1E6B44;
+    -fx-text-fill: white;
+}
+
+.boton-carrito:pressed {
+    -fx-background-color: #0E3E22;
+    -fx-text-fill: white;
+}
+
+.boton-usuario {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-cursor: hand;
+    /*-fx-padding: 12;*/
+    -fx-border-color: #145C34;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.boton-usuario:hover {
+    -fx-background-color: rgba(20, 92, 52, 0.2);
+    -fx-text-fill: white;
+    -fx-border-color: #1E6B44;
+}
+
+.boton-usuario:pressed {
+    -fx-background-color: rgba(20, 92, 52, 0.4);
+    -fx-text-fill: white;
+    -fx-border-color: #0E3E22;
+}

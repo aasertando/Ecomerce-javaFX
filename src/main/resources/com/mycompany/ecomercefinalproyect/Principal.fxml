@@ -12,7 +12,7 @@
    <children>
       <ImageView id="fondoBlanco" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Imagenes/fondoBlanco.jpg" />
+            <Image url="@img/fondoBlanco.jpg" />
          </image>
       </ImageView>
       <AnchorPane id="barraPrincipal" prefHeight="86.79" prefWidth="1280.0" style="-fx-background-color: #1E4B2C;">
@@ -24,7 +24,7 @@
             </TextField>
             <Button id="btnBuscar" layoutX="836.38" layoutY="15.78" mnemonicParsing="false" prefHeight="55.23" prefWidth="110.47" style="-fx-background-color: #F59E0B;" styleClass="style.css" text="Buscar" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="21.7" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
             <Button id="btnCarrito" layoutX="966.0" layoutY="16.0" mnemonicParsing="false" prefHeight="55.23" prefWidth="130.19" style="-fx-background-color: #145C34; -fx-background-radius: 7.89; -fx-border-radius: 7.89;" text="Carrito" textFill="WHITE">
@@ -78,14 +78,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane id="barraBienvenida" layoutX="17.964" layoutY="157.81" prefHeight="138.08" prefWidth="1244.07" style="-fx-background-color: #1E4B2C; -fx-background-radius: 11.84; -fx-border-radius: 11.84; -fx-border-color: #000000;" styleClass="barra-bienvenida" stylesheets="@principal.css">
+      <AnchorPane id="barraBienvenida" layoutX="17.964" layoutY="157.81" prefHeight="138.08" prefWidth="1244.07" style="-fx-background-color: #1E4B2C; -fx-background-radius: 11.84; -fx-border-radius: 11.84; -fx-border-color: #000000;" styleClass="barra-bienvenida" stylesheets="@estilos/principal.css">
          <children>
-            <Label layoutX="32.0" layoutY="20.0" prefHeight="43.0" prefWidth="540.0" text="¡Desubre lo nuevo en Mobutu!" textFill="#f59e0b">
+            <Label layoutX="32.0" layoutY="20.0" prefHeight="44.0" prefWidth="1204.0" text="¡Desubre lo nuevo en La tienda!" textFill="#f59e0b">
                <font>
                   <Font name="System Bold" size="35.51" />
                </font>
             </Label>
-            <Label layoutX="32.0" layoutY="67.0" prefHeight="29.0" prefWidth="506.0" text="Explora productos pensados para tu día a día" textFill="WHITE">
+            <Label layoutX="32.0" layoutY="67.0" prefHeight="30.0" prefWidth="646.0" text="Explora productos pensados para tu día a día" textFill="WHITE">
                <font>
                   <Font size="23.67" />
                </font>
