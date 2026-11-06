@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1260.0" stylesheets="@estilos/perfilUsuario.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label id="mi-perfil" layoutX="24.0" layoutY="16.0" stylesheets="@estilos/perfilUsuario.css" text="Mi perfil" />
+      <Label layoutX="24.0" layoutY="53.0" styleClass="mensaje-peque" stylesheets="@estilos/perfilUsuario.css" text="Consulta tu información personal y los datos de tu cuenta." />
+      <Pane id="pane" layoutX="24.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
