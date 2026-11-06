@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -89,6 +90,6 @@
       <HBox prefHeight="31.0" prefWidth="1280.0" style="-fx-background-color: #E5E7EB;" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <VBox id="contenidoCentro" fx:id="principal" prefHeight="200.0" prefWidth="1010.0" stylesheets="@estilos/principalDuplica.css" BorderPane.alignment="CENTER" />
+      <AnchorPane id="contenidoCentro" fx:id="principal" prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
