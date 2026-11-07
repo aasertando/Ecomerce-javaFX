@@ -11,23 +11,25 @@ package Modelo;
 public class Usuario {
 
     private int id;
+    private String nombre;
     private String email;
-    private String descripcion;
     private String telefono;
     private String direccion;
     private String ciudad;
     private String contraseña;
-    private int idCarrito;
+    private Carrito carrito;
+    private ListaDeseos listaDeseos;
 
-    public Usuario(int id, String email, String descripcion, String telefono, String direccion, String ciudad, String contraseña, int idCarrito) {
+    public Usuario(int id, String nombre, String email, String telefono, String direccion, String ciudad, String contraseña, Carrito carrito, ListaDeseos listaDeseos) {
         this.id = id;
+        this.nombre = nombre;
         this.email = email;
-        this.descripcion = descripcion;
         this.telefono = telefono;
         this.direccion = direccion;
         this.ciudad = ciudad;
         this.contraseña = contraseña;
-        this.idCarrito = idCarrito;
+        this.carrito = carrito;
+        this.listaDeseos = listaDeseos;
     }
 
     public int getId() {
@@ -38,20 +40,20 @@ public class Usuario {
         this.id = id;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public String getTelefono() {
@@ -86,12 +88,20 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public int getIdCarrito() {
-        return idCarrito;
+    public Carrito getCarrito() {
+        return carrito;
     }
 
-    public void setIdCarrito(int idCarrito) {
-        this.idCarrito = idCarrito;
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
+    }
+
+    public ListaDeseos getListaDeseos() {
+        return listaDeseos;
+    }
+
+    public void setListaDeseos(ListaDeseos listaDeseos) {
+        this.listaDeseos = listaDeseos;
     }
 
 }

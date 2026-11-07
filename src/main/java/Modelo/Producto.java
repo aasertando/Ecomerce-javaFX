@@ -8,23 +8,23 @@ package Modelo;
  *
  * @author garci
  */
-public class Productos {
+public class Producto {
 
     private int id;
     private String nombre;
+    private String descripción;
     private String categoria;
     private double precio;
-    private String descripción;
-    private String imagenURL;
+    private String foto;
 
-    public Productos(int id, String nombre, String categoria, double precio, String descripción, String imagenURL) {
+    public Producto(int id, String nombre, String categoria, double precio, String descripción, String foto) {
 
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
         this.descripción = descripción;
-        this.imagenURL = imagenURL;
+        this.foto = foto;
     }
 
     public int getId() {
@@ -67,12 +67,12 @@ public class Productos {
         this.descripción = descripción;
     }
 
-    public String getImagenURL() {
-        return imagenURL;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setImagenURL(String imagenURL) {
-        this.imagenURL = imagenURL;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
 }
