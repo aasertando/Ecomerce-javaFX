@@ -4,6 +4,8 @@ Diseño disponible en [Figma](https://www.figma.com/design/eRvjDiGXQjMI1CPKdasRZ
 
 https://www.figma.com/design/eRvjDiGXQjMI1CPKdasRZ2/mockup-proyecto-final?node-id=47-3&t=XSE2cTfVulSqI75z-1
 
+Le recomiendo revisar nuestro proyecto de kanban 👀, ahí nos organizamos y repartimos tareas.
+
 > **Nota:** El nombre de mobutu era unicamente de ejemplo, no será el logo final de la aplicacion.
 
 
