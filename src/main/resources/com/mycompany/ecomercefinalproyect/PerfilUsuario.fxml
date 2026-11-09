@@ -17,7 +17,7 @@
          <children>
             <HBox prefHeight="64.0" prefWidth="842.0" spacing="440.0">
                <children>
-                  <Label styleClass="titulo-rectangulo" stylesheets="@estilos/perfilUsuario.css" text="Información personal">
+                  <Label prefHeight="24.0" prefWidth="614.0" styleClass="titulo-rectangulo" stylesheets="@estilos/perfilUsuario.css" text="Información personal">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -25,7 +25,7 @@
                         <Insets left="24.0" />
                      </padding>
                   </Label>
-                  <Button id="btnEditarInfo" mnemonicParsing="false" stylesheets="@estilos/perfilUsuario.css" text="Editar información" />
+                  <Button id="btnEditarInfo" mnemonicParsing="false" prefHeight="32.0" prefWidth="482.0" stylesheets="@estilos/perfilUsuario.css" text="Editar información" />
                </children>
             </HBox>
             <Label styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="Nombre">
@@ -33,7 +33,7 @@
                   <Insets left="24.0" />
                </padding>
             </Label>
-            <TextField id="casillaNombreUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="422.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+            <TextField id="casillaNombreUsuario" fx:id="inputNombre" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="422.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
                <font>
                   <Font size="18.0" />
                </font>
@@ -101,6 +101,7 @@
                   </TextField>
                </children>
             </HBox>
+            <Button id="btnEditarInfo" fx:id="btnGuardarInfo" mnemonicParsing="false" onAction="#guardarInfo" stylesheets="@estilos/perfilUsuario.css" text="Guardar nueva informacion" />
          </children>
          <padding>
             <Insets bottom="24.0" right="24.0" top="24.0" />
