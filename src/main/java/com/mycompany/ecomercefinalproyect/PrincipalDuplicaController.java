@@ -53,6 +53,19 @@ public class PrincipalDuplicaController {
 
     @FXML
     void mostrarCarrito(ActionEvent event) {
+        
+        try {
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/Carrito.fxml"));
+            principal.getChildren().setAll(nuevo);
+
+            AnchorPane.setTopAnchor(nuevo, 0.0);
+            AnchorPane.setBottomAnchor(nuevo, 0.0);
+            AnchorPane.setLeftAnchor(nuevo, 0.0);
+            AnchorPane.setRightAnchor(nuevo, 0.0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

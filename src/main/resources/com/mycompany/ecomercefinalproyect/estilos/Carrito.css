@@ -1,0 +1,6 @@
+#fondo-blanco {
+    -fx-background-image: url(../img/fondoBlanco.jpg);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}

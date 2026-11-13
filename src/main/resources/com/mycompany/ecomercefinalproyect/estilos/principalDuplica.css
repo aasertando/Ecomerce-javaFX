@@ -1,6 +1,7 @@
 .boton-menu-categoria {
     -fx-background-color: transparent;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-font-size: 20px;
     -fx-cursor: hand;
     -fx-padding: 12;
@@ -31,6 +32,7 @@
 .boton-buscar {
     -fx-background-color: #F39C12;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-font-size: 20px;
     -fx-cursor: hand;
     /*-fx-padding: 12;*/
@@ -54,6 +56,7 @@
 .boton-carrito {
     -fx-background-color: #145C34;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-font-size: 20px;
     -fx-cursor: hand;
     -fx-padding: 12;
@@ -77,6 +80,7 @@
 .boton-usuario {
     -fx-background-color: transparent;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-font-size: 20px;
     -fx-cursor: hand;
     /*-fx-padding: 12;*/
