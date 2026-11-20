@@ -47,3 +47,47 @@
     -fx-font-size: 17px;
     -fx-border-color: transparent;
 }
+
+/* para el popmenu*/
+.menu-usuario {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 16, 0.1, 0, 4);
+}
+
+.fila-menu {
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.fila-menu:hover {
+    -fx-background-color: #f1f5f3;
+}
+
+.menu-titulo {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.menu-subtitulo {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7280;
+}
+
+.menu-opcion {
+    -fx-font-size: 15px;
+    -fx-text-fill: #1f2937;
+}
+
+.menu-divisor {
+    -fx-background-color: #e5e7eb;
+}
+
+.icono-menu {
+    -fx-fill: transparent;
+    -fx-stroke: #374151;
+    -fx-stroke-width: 1.8;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
