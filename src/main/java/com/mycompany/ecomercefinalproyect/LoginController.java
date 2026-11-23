@@ -11,7 +11,7 @@ public class LoginController {
     private static final String USUARIO_VALIDO = "admin";
     private static final String CLAVE_VALIDA = "admin";
 
-    private static final String PANTALLA_SIGUIENTE = "principal";
+    private static final String PANTALLA_SIGUIENTE = "principalDuplica";
 
     @FXML
     private TextField txtUsuario;

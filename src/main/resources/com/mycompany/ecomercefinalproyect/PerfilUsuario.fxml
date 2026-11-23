@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1280.0" stylesheets="@estilos/perfilUsuario.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.PerfilUsuarioController">
+<AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1280.0" stylesheets="@estilos/perfilUsuario.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.PerfilUsuarioController">
    <children>
       <Label id="mi-perfil" layoutX="24.0" layoutY="16.0" stylesheets="@estilos/perfilUsuario.css" text="Mi perfil" />
       <Label layoutX="24.0" layoutY="53.0" styleClass="mensaje-peque" stylesheets="@estilos/perfilUsuario.css" text="Consulta tu información personal y los datos de tu cuenta." />
@@ -106,7 +106,10 @@
                   </TextField>
                </children>
             </HBox>
-            <Button id="btnEditarInfo" fx:id="btnGuardarInfo" mnemonicParsing="false" onAction="#guardarInfo" stylesheets="@estilos/perfilUsuario.css" text="Guardar nueva informacion" />
+            <Button id="btnEditarInfo" fx:id="btnGuardarInfo" mnemonicParsing="false" onAction="#guardarInfo" stylesheets="@estilos/perfilUsuario.css" text="Guardar nueva informacion">
+               <VBox.margin>
+                  <Insets left="24.0" />
+               </VBox.margin></Button>
          </children>
          <padding>
             <Insets bottom="24.0" right="24.0" top="24.0" />

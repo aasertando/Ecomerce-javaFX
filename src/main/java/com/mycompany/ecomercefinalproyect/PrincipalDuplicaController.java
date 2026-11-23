@@ -132,7 +132,6 @@ public class PrincipalDuplicaController {
 
     @FXML
     void mostrarUsuario(ActionEvent event) {
-        
         try {
             AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/PerfilUsuario.fxml"));
             principal.getChildren().setAll(nuevo);
