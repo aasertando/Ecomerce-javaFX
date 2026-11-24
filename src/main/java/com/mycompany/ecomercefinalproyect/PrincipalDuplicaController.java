@@ -1,16 +1,17 @@
 package com.mycompany.ecomercefinalproyect;
 
-import javafx.geometry.Bounds;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
+import Modelo.Usuario;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 public class PrincipalDuplicaController {
 
@@ -49,8 +50,13 @@ public class PrincipalDuplicaController {
 
     @FXML
     private AnchorPane principal;
-    
+
     private Popup menuPopup;
+    private Usuario usuarioActual;
+
+    public void setUsuario(Usuario u) {
+        this.usuarioActual = u;
+    }
 
     @FXML
     void buscarProducto(ActionEvent event) {
@@ -59,7 +65,6 @@ public class PrincipalDuplicaController {
 
     @FXML
     void mostrarCarrito(ActionEvent event) {
-        
         try {
             AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/Carrito.fxml"));
             principal.getChildren().setAll(nuevo);
@@ -72,7 +77,6 @@ public class PrincipalDuplicaController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
@@ -92,7 +96,6 @@ public class PrincipalDuplicaController {
 
     @FXML
     void mostrarCategoriaElectronica(ActionEvent event) {
-
         try {
             AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaElectronica.fxml"));
             principal.getChildren().setAll(nuevo);
@@ -105,7 +108,6 @@ public class PrincipalDuplicaController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
@@ -120,7 +122,6 @@ public class PrincipalDuplicaController {
 
     @FXML
     void mostrarCategoriaRopa(ActionEvent event) {
-
         try {
             AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaRopa.fxml"));
             principal.getChildren().setAll(nuevo);
@@ -133,7 +134,6 @@ public class PrincipalDuplicaController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
@@ -160,7 +160,7 @@ public class PrincipalDuplicaController {
 
             // Ubicar el menú justo debajo y alineado a la derecha del botón btnHeaderUsuario
             Bounds limitesBoton = btnHeaderUsuario.localToScreen(btnHeaderUsuario.getBoundsInLocal());
-            double anchoMenu = 250.0; 
+            double anchoMenu = 250.0;
             double posX = limitesBoton.getMaxX() - anchoMenu;
             double posY = limitesBoton.getMaxY() + 5;
 
@@ -170,5 +170,4 @@ public class PrincipalDuplicaController {
             e.printStackTrace();
         }
     }
-
 }

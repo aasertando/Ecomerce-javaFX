@@ -1,12 +1,13 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+- Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+- Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.ecomercefinalproyect;
 
 import Modelo.Usuario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import java.io.File;
 import java.io.FileReader;
@@ -18,7 +19,7 @@ import java.util.List;
 
 /**
  *
- * @author aser
+ * - @author aser
  */
 public class GestorUsuarios {
 
@@ -29,14 +30,14 @@ public class GestorUsuarios {
 
     // 1. Leer la lista de usuarios desde usuarios.json
     public List<Usuario> obtenerTodos() {
-        if (!archivo.exists()) {
+        if (!archivo.exists() || archivo.length() == 0) {
             return new ArrayList<>();
         }
 
         try (FileReader reader = new FileReader(archivo)) {
             List<Usuario> usuarios = gson.fromJson(reader, tipoListaUsuario);
             return usuarios != null ? usuarios : new ArrayList<>();
-        } catch (IOException e) {
+        } catch (IOException | JsonSyntaxException e) {
             e.printStackTrace();
             return new ArrayList<>();
         }

@@ -1,0 +1,18 @@
+[
+  {
+    "nombre": "juan pablo",
+    "email": "juan@asd.com",
+    "telefono": "3124567890",
+    "direccion": "manzana 4",
+    "ciudad": "monteria",
+    "contraseña": "12345"
+  },
+  {
+    "nombre": "andrea",
+    "email": "asdasd",
+    "telefono": "3333333",
+    "direccion": "mmmmmm",
+    "ciudad": "ccccccc",
+    "contraseña": "123"
+  }
+]

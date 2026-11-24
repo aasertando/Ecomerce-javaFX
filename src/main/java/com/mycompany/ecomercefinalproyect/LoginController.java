@@ -1,69 +1,87 @@
 package com.mycompany.ecomercefinalproyect;
 
+import Modelo.Usuario;
 import java.io.IOException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class LoginController {
 
-    private static final String USUARIO_VALIDO = "admin";
-    private static final String CLAVE_VALIDA = "admin";
-
-    private static final String PANTALLA_SIGUIENTE = "PrincipalDuplica";
-
     @FXML
     private TextField txtUsuario;
 
     @FXML
-    private PasswordField txtContrasena;
+    private TextField txtContrasena;
+
+    private final GestorUsuarios gestorUsuarios = new GestorUsuarios();
 
     @FXML
     private void ingresar() throws IOException {
         String usuario = txtUsuario.getText().trim();
-        String clave = txtContrasena.getText();
+        String contrasena = txtContrasena.getText();
 
-        if (usuario.isEmpty() || clave.isEmpty()) {
-            mostrarAlerta(Alert.AlertType.WARNING, "Escribe tu usuario y tu contraseña.");
+        if (usuario.isEmpty() || contrasena.isEmpty()) {
+            mostrarAlerta(
+                    Alert.AlertType.WARNING,
+                    "Campos incompletos",
+                    "Por favor ingresa tu usuario y contraseña."
+            );
             return;
         }
 
-        if (usuario.equals(USUARIO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
-            App.setRoot(PANTALLA_SIGUIENTE);
-        } else {
-            mostrarAlerta(Alert.AlertType.ERROR, "Usuario o contraseña incorrectos.");
-            txtContrasena.clear();
-            txtContrasena.requestFocus();
+        if (usuario.equals("admin") && contrasena.equals("admin")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("PrincipalAdmin.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) txtUsuario.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+            return;
         }
+
+        Usuario u = gestorUsuarios.validarLogin(usuario, contrasena);
+
+        if (u == null) {
+            mostrarAlerta(
+                    Alert.AlertType.ERROR,
+                    "Acceso denegado",
+                    "Usuario o contraseña incorrectos."
+            );
+            return;
+        }
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PrincipalDuplica.fxml"));
+        Parent root = loader.load();
+
+        PrincipalDuplicaController controller = loader.getController();
+        controller.setUsuario(u);
+
+        Stage stage = (Stage) txtUsuario.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
-    private void mostrarAlerta(Alert.AlertType tipo, String mensaje) {
-        Alert alerta = new Alert(tipo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
-    
+
     @FXML
-    private void irARegistro(ActionEvent event) {
-        try {
+    private void irARegistro() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/ecomercefinalproyect/registro.fxml"));
+        Parent root = loader.load();
 
-            App.setRoot("registro");
-//            
-//            Parent root = FXMLLoader.load(getClass().getResource("registro.fxml"));
-//
-//
-//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//            stage.getScene().setRoot(root);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Stage stage = (Stage) txtUsuario.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
+
 }
