@@ -51,7 +51,7 @@
             </Button>
          </children>
       </VBox>
-      <Hyperlink styleClass="enlace" stylesheets="@estilos/login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
+      <Hyperlink onAction="#irARegistro" styleClass="enlace" stylesheets="@estilos/login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
          <StackPane.margin>
             <Insets bottom="14.0" right="17.0" />
          </StackPane.margin>
