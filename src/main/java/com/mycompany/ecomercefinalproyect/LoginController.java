@@ -16,7 +16,7 @@ public class LoginController {
     private static final String USUARIO_VALIDO = "admin";
     private static final String CLAVE_VALIDA = "admin";
 
-    private static final String PANTALLA_SIGUIENTE = "principalDuplica";
+    private static final String PANTALLA_SIGUIENTE = "PrincipalDuplica";
 
     @FXML
     private TextField txtUsuario;
@@ -54,11 +54,13 @@ public class LoginController {
     private void irARegistro(ActionEvent event) {
         try {
 
-            Parent root = FXMLLoader.load(getClass().getResource("Registro.fxml"));
-
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.getScene().setRoot(root);
+            App.setRoot("registro");
+//            
+//            Parent root = FXMLLoader.load(getClass().getResource("registro.fxml"));
+//
+//
+//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            stage.getScene().setRoot(root);
 
         } catch (IOException e) {
             e.printStackTrace();
