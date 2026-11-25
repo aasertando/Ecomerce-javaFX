@@ -22,5 +22,13 @@
     "direccion": "Santa fe",
     "ciudad": "Monteria",
     "contraseña": "12345"
+  },
+  {
+    "nombre": "jose",
+    "email": "jose@",
+    "telefono": "32183728323",
+    "direccion": "casa",
+    "ciudad": "cordoba",
+    "contraseña": "jose"
   }
 ]
