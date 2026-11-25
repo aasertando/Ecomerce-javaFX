@@ -24,33 +24,6 @@ import javafx.stage.Stage;
 public class PrincipalDuplicaController implements Initializable {
 
     @FXML
-    private Button btnHeaderAlimentos;
-
-    @FXML
-    private Button btnHeaderBelleza;
-
-    @FXML
-    private Button btnHeaderBuscar;
-
-    @FXML
-    private Button btnHeaderCarrito;
-
-    @FXML
-    private Button btnHeaderDeportes;
-
-    @FXML
-    private Button btnHeaderElectronica;
-
-    @FXML
-    private Button btnHeaderHogar;
-
-    @FXML
-    private Button btnHeaderJuguetes;
-
-    @FXML
-    private Button btnHeaderRopa;
-
-    @FXML
     private Button btnHeaderUsuario;
 
     @FXML
@@ -142,17 +115,50 @@ public class PrincipalDuplicaController implements Initializable {
 
     @FXML
     void mostrarCategoriaAlimentos(ActionEvent event) {
+        try {
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaAlimentos.fxml"));
+            principal.getChildren().setAll(nuevo);
 
+            AnchorPane.setTopAnchor(nuevo, 0.0);
+            AnchorPane.setBottomAnchor(nuevo, 0.0);
+            AnchorPane.setLeftAnchor(nuevo, 0.0);
+            AnchorPane.setRightAnchor(nuevo, 0.0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void mostrarCategoriaBelleza(ActionEvent event) {
+        try {
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaBelleza.fxml"));
+            principal.getChildren().setAll(nuevo);
 
+            AnchorPane.setTopAnchor(nuevo, 0.0);
+            AnchorPane.setBottomAnchor(nuevo, 0.0);
+            AnchorPane.setLeftAnchor(nuevo, 0.0);
+            AnchorPane.setRightAnchor(nuevo, 0.0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void mostrarCategoriaDeportes(ActionEvent event) {
+        try {
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaDeportes.fxml"));
+            principal.getChildren().setAll(nuevo);
 
+            AnchorPane.setTopAnchor(nuevo, 0.0);
+            AnchorPane.setBottomAnchor(nuevo, 0.0);
+            AnchorPane.setLeftAnchor(nuevo, 0.0);
+            AnchorPane.setRightAnchor(nuevo, 0.0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -173,12 +179,34 @@ public class PrincipalDuplicaController implements Initializable {
 
     @FXML
     void mostrarCategoriaHogar(ActionEvent event) {
+        try {
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaHogar.fxml"));
+            principal.getChildren().setAll(nuevo);
 
+            AnchorPane.setTopAnchor(nuevo, 0.0);
+            AnchorPane.setBottomAnchor(nuevo, 0.0);
+            AnchorPane.setLeftAnchor(nuevo, 0.0);
+            AnchorPane.setRightAnchor(nuevo, 0.0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void mostrarCategoriaJuguetes(ActionEvent event) {
+        try {
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/CategoriaJuguetes.fxml"));
+            principal.getChildren().setAll(nuevo);
 
+            AnchorPane.setTopAnchor(nuevo, 0.0);
+            AnchorPane.setBottomAnchor(nuevo, 0.0);
+            AnchorPane.setLeftAnchor(nuevo, 0.0);
+            AnchorPane.setRightAnchor(nuevo, 0.0);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

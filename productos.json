@@ -16,11 +16,19 @@
     "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
   },
   {
-    "nombre": "PC",
-    "categoria": "Electronica",
+    "nombre": "Pato",
+    "categoria": "Juguetes",
     "Stock": 10,
-    "precio": 1.0E7,
-    "descripcion": "pro gamer",
-    "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/laptop.png"
+    "precio": 2000.0,
+    "descripcion": "Un pato",
+    "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/images.png"
+  },
+  {
+    "nombre": "Sueter",
+    "categoria": "Ropa",
+    "Stock": 10,
+    "precio": 70000.0,
+    "descripcion": "Nitido",
+    "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/Uniforme.png"
   }
 ]

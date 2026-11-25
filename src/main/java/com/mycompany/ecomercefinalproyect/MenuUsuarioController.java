@@ -63,7 +63,6 @@ public class MenuUsuarioController {
             }
             AnchorPane nuevo = (AnchorPane) FXMLLoader.load(recurso);
             principal.getChildren().setAll(nuevo);
-
             AnchorPane.setTopAnchor(nuevo, 0.0);
             AnchorPane.setBottomAnchor(nuevo, 0.0);
             AnchorPane.setLeftAnchor(nuevo, 0.0);
