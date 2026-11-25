@@ -1,6 +1,6 @@
 /*
-- Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-- Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.ecomercefinalproyect;
 
@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  *
- * - @author aser
+ * @author aser
  */
 public class GestorUsuarios {
 
@@ -78,5 +78,18 @@ public class GestorUsuarios {
             }
         }
         return null;
+    }
+
+    // 5. Actualizar información de un usuario
+    public boolean actualizarUsuario(String nombreOriginal, Usuario usuarioActualizado) {
+        List<Usuario> usuarios = obtenerTodos();
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i).getNombre().equalsIgnoreCase(nombreOriginal)) {
+                usuarios.set(i, usuarioActualizado);
+                guardarTodos(usuarios);
+                return true;
+            }
+        }
+        return false;
     }
 }

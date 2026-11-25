@@ -1,5 +1,6 @@
 package com.mycompany.ecomercefinalproyect;
 
+import Modelo.Carrito;
 import Modelo.Productos;
 import Modelo.Usuario;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -93,7 +95,14 @@ public class PrincipalDuplicaController implements Initializable {
                         p.getDescripcion(),
                         precioFormateado,
                         p.getImagenURL(),
-                        () -> System.out.println("Agregar al carrito: " + p.getNombre()),
+                        () -> {
+                            Carrito.getInstancia().agregarProducto(p);
+                            mostrarAlerta(
+                                    Alert.AlertType.INFORMATION,
+                                    "Carrito de compras",
+                                    "¡" + p.getNombre() + " se agrego a tu carrito!"
+                            );
+                        },
                         () -> System.out.println("Favorito: " + p.getNombre())
                 );
 
@@ -221,5 +230,13 @@ public class PrincipalDuplicaController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 }

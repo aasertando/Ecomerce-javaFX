@@ -11,7 +11,7 @@
       <Label id="nombre" fx:id="lblNombre" layoutX="116.0" layoutY="16.0" stylesheets="@estilos/itemCarrito.css" text="Smartphone X12" />
       <Label id="detalle" fx:id="lblDetalle" layoutX="116.0" layoutY="46.0" stylesheets="@estilos/itemCarrito.css" text="128GB / 5G" />
       <Label id="precio" fx:id="lblPrecioUnitario" layoutX="116.0" layoutY="78.0" stylesheets="@estilos/itemCarrito.css" text="\$799.00 c/u" />
-      <Label id="subtotal" fx:id="lblSubtotal" alignment="CENTER_RIGHT" layoutY="30.0" prefWidth="150.0" stylesheets="@estilos/itemCarrito.css" text="\$799.00" AnchorPane.rightAnchor="20.0" />
+      <Label id="subtotal" fx:id="lblSubtotal" alignment="CENTER_RIGHT" layoutY="30.0" prefWidth="220.0" stylesheets="@estilos/itemCarrito.css" text="\$799.00" AnchorPane.rightAnchor="20.0" />
       <Button id="btn-eliminar" fx:id="btnEliminar" layoutY="66.0" mnemonicParsing="false" onAction="#handleEliminar" stylesheets="@estilos/itemCarrito.css" text="Eliminar" AnchorPane.rightAnchor="20.0" />
    </children>
 </AnchorPane>

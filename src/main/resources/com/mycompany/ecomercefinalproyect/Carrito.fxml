@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -14,7 +15,7 @@
    <children>
       <ScrollPane layoutX="24.0" layoutY="83.0" prefHeight="421.0" prefWidth="738.0" stylesheets="@estilos/Carrito.css">
          <content>
-            <VBox fx:id="contenedorProductos" prefHeight="421.0" prefWidth="738.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css" />
+            <VBox fx:id="contenedorProductos" prefWidth="710.0" spacing="10.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css" />
          </content>
       </ScrollPane>
       <Label id="mi-carrito" layoutX="24.0" layoutY="12.0" prefWidth="139.0" stylesheets="@estilos/Carrito.css" text="Mi carrito" />
@@ -32,12 +33,15 @@
                   <Insets bottom="8.0" />
                </VBox.margin>
             </Label>
-            <RadioButton mnemonicParsing="false" prefHeight="58.0" prefWidth="346.0" styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Efectivo contra entrega">
+            <RadioButton fx:id="rbEfectivo" mnemonicParsing="false" prefHeight="58.0" prefWidth="346.0" selected="true" styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Efectivo contra entrega">
                <padding>
                   <Insets bottom="8.0" />
                </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupoPago" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" prefHeight="58.0" prefWidth="346.0" styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Nequi">
+            <RadioButton fx:id="rbNequi" mnemonicParsing="false" prefHeight="58.0" prefWidth="346.0" styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Nequi" toggleGroup="$grupoPago">
                <padding>
                   <Insets bottom="8.0" />
                </padding>
@@ -61,7 +65,7 @@
                         <Insets bottom="4.0" right="165.0" />
                      </padding>
                   </Label>
-                  <Label id="subtotal" fx:id="lblSubtotal" stylesheets="@estilos/Carrito.css" text="XXXXXXXXX" />
+                  <Label id="subtotal" fx:id="lblSubtotal" stylesheets="@estilos/Carrito.css" text="\$0.00" />
                </children>
             </HBox>
             <HBox prefHeight="17.0" prefWidth="346.0">
@@ -86,13 +90,13 @@
                         <Insets right="90.0" />
                      </padding>
                   </Label>
-                  <Label id="pagar" fx:id="lblTotalPagar" stylesheets="@estilos/Carrito.css" text="\$XXXXXXX" />
+                  <Label id="pagar" fx:id="lblTotalPagar" stylesheets="@estilos/Carrito.css" text="\$0.00" />
                </children>
                <padding>
                   <Insets bottom="6.0" />
                </padding>
             </HBox>
-            <Button id="btn-compra" fx:id="btnConfirmarPedido" mnemonicParsing="false" prefHeight="44.0" prefWidth="348.0" stylesheets="@estilos/Carrito.css" text="Confirmar pedido" />
+            <Button id="btn-compra" fx:id="btnConfirmarPedido" mnemonicParsing="false" onAction="#confirmarPedido" prefHeight="44.0" prefWidth="348.0" stylesheets="@estilos/Carrito.css" text="Confirmar pedido" />
          </children>
          <padding>
             <Insets bottom="10.0" left="16.0" right="16.0" top="10.0" />

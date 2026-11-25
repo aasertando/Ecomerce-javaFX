@@ -1,5 +1,6 @@
 package com.mycompany.ecomercefinalproyect;
 
+import Modelo.Sesion;
 import Modelo.Usuario;
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -54,6 +55,8 @@ public class LoginController {
             );
             return;
         }
+
+        Sesion.setUsuarioActual(u);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("PrincipalDuplica.fxml"));
         Parent root = loader.load();

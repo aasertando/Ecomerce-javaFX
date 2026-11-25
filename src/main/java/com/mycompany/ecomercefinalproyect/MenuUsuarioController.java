@@ -1,5 +1,6 @@
 package com.mycompany.ecomercefinalproyect;
 
+import Modelo.Sesion;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,13 +29,11 @@ public class MenuUsuarioController {
 
     @FXML
     void irAListaDeseados(ActionEvent event) {
-        // Asegúrate de que el archivo se llame así cuando lo crees
         cargarEnPrincipal("/com/mycompany/ecomercefinalproyect/ListaDeseados.fxml");
     }
 
     @FXML
     void irAHistorial(ActionEvent event) {
-        // Asegúrate de que el archivo se llame así cuando lo crees
         cargarEnPrincipal("/com/mycompany/ecomercefinalproyect/HistorialCompras.fxml");
     }
 
@@ -43,8 +42,8 @@ public class MenuUsuarioController {
         if (popupActual != null) {
             popupActual.hide();
         }
+        Sesion.cerrarSesion();
         try {
-            // Aquí sí reemplazamos toda la ventana para quitar la barra verde y volver al Login
             Parent root = FXMLLoader.load(getClass().getResource("/com/mycompany/ecomercefinalproyect/Login.fxml"));
             stagePrincipal.getScene().setRoot(root);
         } catch (IOException e) {
@@ -52,13 +51,17 @@ public class MenuUsuarioController {
         }
     }
 
-    // Tu mismo método para cargar vistas dentro del AnchorPane 'principal'
     private void cargarEnPrincipal(String rutaFxml) {
         if (popupActual != null) {
             popupActual.hide();
         }
         try {
-            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(getClass().getResource(rutaFxml));
+            var recurso = getClass().getResource(rutaFxml);
+            if (recurso == null) {
+                System.err.println("No se encontro el archivo FXML: " + rutaFxml);
+                return;
+            }
+            AnchorPane nuevo = (AnchorPane) FXMLLoader.load(recurso);
             principal.getChildren().setAll(nuevo);
 
             AnchorPane.setTopAnchor(nuevo, 0.0);
