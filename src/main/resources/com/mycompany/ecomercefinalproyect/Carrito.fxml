@@ -12,9 +12,9 @@
 
 <AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1280.0" stylesheets="@estilos/Carrito.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.CarritoController">
    <children>
-      <ScrollPane layoutX="24.0" layoutY="83.0" prefHeight="421.0" prefWidth="828.0" stylesheets="@estilos/Carrito.css">
+      <ScrollPane layoutX="24.0" layoutY="83.0" prefHeight="421.0" prefWidth="738.0" stylesheets="@estilos/Carrito.css">
          <content>
-            <VBox fx:id="contenedorProductos" prefHeight="421.0" prefWidth="828.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css" />
+            <VBox fx:id="contenedorProductos" prefHeight="421.0" prefWidth="738.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css" />
          </content>
       </ScrollPane>
       <Label id="mi-carrito" layoutX="24.0" layoutY="12.0" prefWidth="139.0" stylesheets="@estilos/Carrito.css" text="Mi carrito" />

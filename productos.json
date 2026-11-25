@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Smartphone X12",
+    "categoria": "Electronica",
+    "Stock": 25,
+    "precio": 799.0,
+    "descripcion": "128GB / 5G",
+    "imagenURL": "/com/mycompany/ecomercefinalproyect/img/smartphone.png"
+  },
+  {
+    "nombre": "Audifonos BT",
+    "categoria": "Electronica",
+    "Stock": 15,
+    "precio": 249.0,
+    "descripcion": "Noise Cancelling",
+    "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
+  },
+  {
+    "nombre": "PC",
+    "categoria": "Electronica",
+    "Stock": 10,
+    "precio": 1.0E7,
+    "descripcion": "pro gamer",
+    "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/laptop.png"
+  }
+]

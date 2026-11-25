@@ -4,6 +4,8 @@
  */
 package com.mycompany.ecomercefinalproyect;
 
+import java.io.File;
+import java.net.URL;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,7 +19,7 @@ import javafx.scene.image.ImageView;
  */
 public class TarjetaProductoController {
 
-    @FXML 
+    @FXML
     private ImageView imgProducto;
     @FXML
     private Button btnFavorito;
@@ -33,6 +35,25 @@ public class TarjetaProductoController {
     private Runnable onAgregarCarrito;
     private Runnable onFavorito;
 
+    private void cargarImagen(ImageView imageView, String ruta) {
+        if (imageView == null || ruta == null || ruta.isBlank()) {
+            return;
+        }
+        try {
+            URL recurso = getClass().getResource(ruta);
+            if (recurso != null) {
+                imageView.setImage(new Image(recurso.toExternalForm()));
+            } else {
+                String uri = (ruta.startsWith("file:") || ruta.startsWith("http:") || ruta.startsWith("https:"))
+                        ? ruta
+                        : new File(ruta).toURI().toString();
+                imageView.setImage(new Image(uri));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void setDatos(String nombre, String detalle, String precio, String rutaImagen,
             Runnable onAgregarCarrito, Runnable onFavorito) {
         lblNombre.setText(nombre);
@@ -41,12 +62,7 @@ public class TarjetaProductoController {
         this.onAgregarCarrito = onAgregarCarrito;
         this.onFavorito = onFavorito;
 
-        if (rutaImagen != null && !rutaImagen.isBlank()) {
-            var url = getClass().getResource(rutaImagen);
-            if (url != null) {
-                imgProducto.setImage(new Image(url.toExternalForm()));
-            }
-        }
+        cargarImagen(imgProducto, rutaImagen);
     }
 
     @FXML

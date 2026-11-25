@@ -4,7 +4,6 @@ import Modelo.Productos;
 import Modelo.Usuario;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -62,44 +61,15 @@ public class PrincipalDuplicaController implements Initializable {
     private Usuario usuarioActual;
     
     //-----------------------------------------------------------------------------------------------------------------------
-    //Cargar productos en la pantalla principal
+    //Cargar productos en la pantalla principal y productos
     @FXML
     private TilePane contenedorProductos;
 
-    private final List<Productos> catalogoPrincipal = new ArrayList<>();
+    private final GestorProductos gestorProductos = new GestorProductos(); // Gestor de productos JSON
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cargarDatosPrueba();
-        mostrarProductos(catalogoPrincipal);
-    }
-
-    private void cargarDatosPrueba() {
-        catalogoPrincipal.clear();
-        catalogoPrincipal.add(new Productos(
-                "Laptop Pro 14",
-                "Electrónica",
-                10,
-                1299.00,
-                "Intel i7 / 16GB RAM",
-                "/com/mycompany/ecomercefinalproyect/images/laptop.png"
-        ));
-        catalogoPrincipal.add(new Productos(
-                "Smartphone X12",
-                "Electrónica",
-                25,
-                799.00,
-                "128GB / 5G",
-                "/com/mycompany/ecomercefinalproyect/images/smartphone.png"
-        ));
-        catalogoPrincipal.add(new Productos(
-                "Audífonos BT",
-                "Electrónica",
-                15,
-                249.00,
-                "Noise Cancelling",
-                "/com/mycompany/ecomercefinalproyect/images/audifonos.png"
-        ));
+        mostrarProductos(gestorProductos.obtenerTodos());
     }
 
     public void mostrarProductos(List<Productos> lista) {
@@ -135,6 +105,7 @@ public class PrincipalDuplicaController implements Initializable {
     }
     
     //-----------------------------------------------------------------------------------------------------------------------
+
     public void setUsuario(Usuario u) {
         this.usuarioActual = u;
     }

@@ -15,6 +15,10 @@ public class Productos {
     private double precio;
     private String descripcion;
     private String imagenURL;
+    
+    public Productos(){
+        
+    }
 
     public Productos(String nombre, String categoria, int Stock, double precio, String descripcion, String imagenURL) {
         this.nombre = nombre;

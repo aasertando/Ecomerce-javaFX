@@ -1,1 +1,72 @@
+#fondo-blanco {
+    -fx-background-image: url(../img/fondoBlanco.jpg);
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
 
+#producto {
+    -fx-text-fill: #1E4B2C;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+#mensaje-gris {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 17.75px;
+}
+
+.pane-blanco {
+    -fx-background-radius: 12px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 12px;
+}
+
+#anadir-producto{
+    -fx-text-fill: #1E4B2C;
+    -fx-font-size: 21.7px;
+    -fx-font-weight: bold;
+}
+
+#texto-chiquito {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 14px;
+}
+
+.titulos {
+    -fx-text-fill: #111827;
+    -fx-font-size: 17.75px;
+    -fx-font-weight: bold;
+}
+
+#boton-subirImg {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #1E4B2C;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 9px 16px;
+    -fx-cursor: hand;
+}
+
+#boton-subirImg:hover {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #1E4B2C;
+}
+
+#boton-publicar{
+    -fx-background-color: #F59E0B;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #1E293B;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 18px;
+    -fx-cursor: hand;
+}
+
+#boton-publicar:hover {
+    -fx-background-color: #D97706;
+}

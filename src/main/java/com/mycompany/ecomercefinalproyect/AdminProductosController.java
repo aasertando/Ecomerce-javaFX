@@ -1,50 +1,223 @@
 package com.mycompany.ecomercefinalproyect;
 
+import Modelo.Productos;
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
-public class AdminProductosController {
+public class AdminProductosController implements Initializable {
+
+    // Columna izquierda: Catálogo de productos
+    @FXML
+    private VBox contenedorProductos;
+
+    // Columna derecha: Formulario Añadir producto
+    @FXML
+    private TextField txtNombre;
 
     @FXML
-    private TextField inputNombre;
+    private ComboBox<String> cbCategoria;
 
     @FXML
-    private ComboBox comboCategoria;
+    private TextField txtPrecio;
 
     @FXML
-    private TextField inputPrecio;
+    private TextField txtDescripcion;
 
     @FXML
-    private TextField inputDescripcion;
+    private Button btnSubirImagen;
+
+    private final GestorProductos gestorProductos = new GestorProductos();
+    private String rutaImagenSeleccionada = "";
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        if (cbCategoria != null) {
+            cbCategoria.setItems(FXCollections.observableArrayList(
+                    "Electronica",
+                    "Ropa",
+                    "Hogar",
+                    "Deportes",
+                    "Juguetes",
+                    "Belleza",
+                    "Alimentos"
+            ));
+        }
+        if (contenedorProductos != null) {
+            contenedorProductos.setSpacing(10);
+        }
+        cargarCatalogoAdmin();
+    }
+
+    // Refresca la lista de productos reutilizando ItemCarrito.fxml
+    public void cargarCatalogoAdmin() {
+        if (contenedorProductos == null) {
+            return;
+        }
+        contenedorProductos.getChildren().clear();
+
+        List<Productos> productos = gestorProductos.obtenerTodos();
+        for (Productos p : productos) {
+            try {
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource("/com/mycompany/ecomercefinalproyect/ItemCarrito.fxml")
+                );
+                Parent fila = loader.load();
+
+                ItemCarritoController ctrl = loader.getController();
+                String precioFormateado = String.format("$%,.2f", p.getPrecio());
+
+                ctrl.setDatos(
+                        p.getNombre(),
+                        p.getDescripcion(),
+                        "Categoría: " + p.getCategoria(),
+                        precioFormateado,
+                        p.getImagenURL(),
+                        () -> {
+                            if (gestorProductos.eliminarProducto(p.getNombre())) {
+                                cargarCatalogoAdmin();
+                            }
+                        }
+                );
+
+                contenedorProductos.getChildren().add(fila);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     @FXML
-    private Button btnSubirFoto;
-
-    String foto;
-
-    void handleSubirImagen() {
-
-        FileChooser seleccionador = new FileChooser();
-        seleccionador.setTitle("Seleccione foto del producto");
-        seleccionador.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Imágenes", "*.png", "*.jpg", "*.jpeg")
+    void subirImagen(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Seleccionar imagen del producto");
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Imágenes (JPG, PNG)", "*.jpg", "*.jpeg", "*.png")
         );
-        
-        //para que se abra en si y se guarde, y se abra con el botón de padre
-        File archivo = seleccionador.showOpenDialog(btnSubirFoto.getScene().getWindow());
-        
-        
-        
-        
 
+        File archivoSeleccionado = fileChooser.showOpenDialog(btnSubirImagen.getScene().getWindow());
+        if (archivoSeleccionado == null) {
+            return;
+        }
+
+        long maxBytes = 5L * 1024L * 1024L;
+        if (archivoSeleccionado.length() > maxBytes) {
+            mostrarAlerta(
+                    Alert.AlertType.WARNING,
+                    "Archivo muy pesado",
+                    "La imagen supera el límite máximo de 5 MB."
+            );
+            return;
+        }
+
+        rutaImagenSeleccionada = archivoSeleccionado.toURI().toString();
+        mostrarAlerta(
+                Alert.AlertType.INFORMATION,
+                "Imagen cargada",
+                "Imagen seleccionada: " + archivoSeleccionado.getName()
+        );
     }
 
-    void handleCrearProducto() {
+    @FXML
+    void publicarProducto(ActionEvent event) {
+        String nombre = txtNombre.getText() != null ? txtNombre.getText().trim() : "";
+        String categoria = cbCategoria.getValue();
+        String precioTexto = txtPrecio.getText() != null ? txtPrecio.getText().trim().replace(",", ".") : "";
+        String descripcion = txtDescripcion.getText() != null ? txtDescripcion.getText().trim() : "";
 
+        if (nombre.isEmpty() || categoria == null || categoria.isBlank()
+                || precioTexto.isEmpty() || descripcion.isEmpty()
+                || rutaImagenSeleccionada.isBlank()) {
+            mostrarAlerta(
+                    Alert.AlertType.WARNING,
+                    "Campos incompletos",
+                    "Completa todos los campos obligatorios (*) y selecciona una imagen."
+            );
+            return;
+        }
+
+        double precio;
+        try {
+            precio = Double.parseDouble(precioTexto);
+            if (precio <= 0) {
+                mostrarAlerta(
+                        Alert.AlertType.WARNING,
+                        "Precio inválido",
+                        "El precio debe ser mayor que 0."
+                );
+                return;
+            }
+        } catch (NumberFormatException e) {
+            mostrarAlerta(
+                    Alert.AlertType.ERROR,
+                    "Precio inválido",
+                    "Ingresa un valor numérico válido para el precio (ej. 1299.00)."
+            );
+            return;
+        }
+
+        Productos nuevo = new Productos(
+                nombre,
+                categoria,
+                10,
+                precio,
+                descripcion,
+                rutaImagenSeleccionada
+        );
+
+        if (gestorProductos.agregarProducto(nuevo)) {
+            limpiarCampos();
+            cargarCatalogoAdmin();
+            mostrarAlerta(
+                    Alert.AlertType.INFORMATION,
+                    "Producto publicado",
+                    "El producto se guardó en productos.json."
+            );
+        } else {
+            mostrarAlerta(
+                    Alert.AlertType.ERROR,
+                    "Duplicado",
+                    "Ya existe un producto con ese nombre."
+            );
+        }
     }
 
+    private void limpiarCampos() {
+        if (txtNombre != null) {
+            txtNombre.clear();
+        }
+        if (cbCategoria != null) {
+            cbCategoria.getSelectionModel().clearSelection();
+            cbCategoria.setValue(null);
+        }
+        if (txtPrecio != null) {
+            txtPrecio.clear();
+        }
+        if (txtDescripcion != null) {
+            txtDescripcion.clear();
+        }
+        rutaImagenSeleccionada = "";
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 }

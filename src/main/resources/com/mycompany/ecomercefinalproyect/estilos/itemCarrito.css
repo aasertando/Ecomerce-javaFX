@@ -1,3 +1,10 @@
+.item-carrito {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
 #nombre {
     -fx-text-fill: #111827;
     -fx-font-size: 19.73px;
@@ -24,9 +31,17 @@
 #btn-eliminar {
     -fx-background-radius: 7.89px;
     -fx-background-color: #FFFFFF;
+    -fx-border-color: #CBD5E1;
     -fx-border-radius: 7.89px;
     -fx-text-fill: #6B7280;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-cursor: hand;
+    -fx-padding: 6px 14px;
+}
+
+#btn-eliminar:hover {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #DC2626;
+    -fx-border-color: #F87171;
 }

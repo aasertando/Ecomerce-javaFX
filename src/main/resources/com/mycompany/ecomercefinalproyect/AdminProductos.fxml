@@ -1,11 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.AdminProductosController">
-    
+
+<AnchorPane id="fondo-blanco" prefHeight="540.0" prefWidth="1280.0" stylesheets="@estilos/adminProductos.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.mycompany.ecomercefinalproyect.AdminProductosController">
+   <children>
+      <Label id="producto" layoutX="24.0" layoutY="16.0" stylesheets="@estilos/adminProductos.css" text="Productos" />
+      <Label id="mensaje-gris" layoutX="24.0" layoutY="55.0" stylesheets="@estilos/adminProductos.css" text="Administra el catálogo y añade nuevos productos a tu tienda." />
+      <ScrollPane layoutX="24.0" layoutY="92.0" prefHeight="434.0" prefWidth="738.0">
+         <content>
+            <VBox fx:id="contenedorProductos" prefHeight="434.0" prefWidth="738.0" styleClass="pane-blanco" stylesheets="@estilos/adminProductos.css" />
+         </content>
+      </ScrollPane>
+      <VBox fx:id="contenedorProductos1" layoutX="787.0" layoutY="92.0" prefHeight="428.0" prefWidth="470.0" styleClass="pane-blanco" stylesheets="@estilos/adminProductos.css">
+         <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+         </padding>
+         <children>
+            <Label id="anadir-producto" stylesheets="@estilos/adminProductos.css" text="Añadir producto">
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </Label>
+            <Label id="texto-chiquito" stylesheets="@estilos/adminProductos.css" text="Completa los datos para publicar en la tienda.">
+               <VBox.margin>
+                  <Insets bottom="8.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="22.0" prefWidth="214.0">
+               <children>
+                  <Label styleClass="titulos" stylesheets="@estilos/adminProductos.css" text="Nombre del producto *">
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <Label styleClass="titulos" stylesheets="@estilos/adminProductos.css" text="Categoría *" />
+               </children>
+            </HBox>
+            <HBox prefHeight="44.0" prefWidth="440.0">
+               <children>
+                  <TextField fx:id="txtNombre" prefHeight="44.0" prefWidth="214.0" promptText="Ej. Laptop Pro 14">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <ComboBox fx:id="cbCategoria" prefHeight="44.0" prefWidth="214.0" promptText="Elegir categoría" stylesheets="@estilos/adminProductos.css" />
+               </children>
+               <padding>
+                  <Insets bottom="8.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="22.0" prefWidth="440.0">
+               <children>
+                  <Label styleClass="titulos" stylesheets="@estilos/adminProductos.css" text="Precio ($) *" />
+               </children>
+            </HBox>
+            <TextField fx:id="txtPrecio" prefHeight="44.0" promptText="0.00" />
+            <Label prefHeight="0.0" styleClass="titulos" stylesheets="@estilos/adminProductos.css" text="Descripción *">
+               <padding>
+                  <Insets top="8.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtDescripcion" prefHeight="58.0" promptText="Características, modelo y detalles del producto…" stylesheets="@estilos/adminProductos.css" />
+            <Label styleClass="titulos" stylesheets="@estilos/adminProductos.css" text="Imagen del producto *">
+               <padding>
+                  <Insets top="8.0" />
+               </padding>
+            </Label>
+            <Button id="boton-subirImg" fx:id="btnSubirImagen" mnemonicParsing="false" onAction="#subirImagen" prefHeight="21.0" prefWidth="136.0" stylesheets="@estilos/adminProductos.css" text="Subir imagen" />
+            <Button id="boton-publicar" fx:id="btnPublicar" mnemonicParsing="false" onAction="#publicarProducto" prefHeight="14.0" prefWidth="440.0" stylesheets="@estilos/adminProductos.css" text="Publicar producto" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
