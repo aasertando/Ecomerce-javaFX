@@ -14,5 +14,13 @@
     "direccion": "mmmmmm",
     "ciudad": "ccccccc",
     "contraseña": "123"
+  },
+  {
+    "nombre": "Matias",
+    "email": ".....",
+    "telefono": "3166858200",
+    "direccion": "Santa fe",
+    "ciudad": "Monteria",
+    "contraseña": "12345"
   }
 ]

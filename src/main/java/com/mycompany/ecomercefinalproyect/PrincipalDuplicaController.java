@@ -1,19 +1,26 @@
 package com.mycompany.ecomercefinalproyect;
 
+import Modelo.Productos;
 import Modelo.Usuario;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
-public class PrincipalDuplicaController {
+public class PrincipalDuplicaController implements Initializable {
 
     @FXML
     private Button btnHeaderAlimentos;
@@ -53,7 +60,81 @@ public class PrincipalDuplicaController {
 
     private Popup menuPopup;
     private Usuario usuarioActual;
+    
+    //-----------------------------------------------------------------------------------------------------------------------
+    //Cargar productos en la pantalla principal
+    @FXML
+    private TilePane contenedorProductos;
 
+    private final List<Productos> catalogoPrincipal = new ArrayList<>();
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        cargarDatosPrueba();
+        mostrarProductos(catalogoPrincipal);
+    }
+
+    private void cargarDatosPrueba() {
+        catalogoPrincipal.clear();
+        catalogoPrincipal.add(new Productos(
+                "Laptop Pro 14",
+                "Electrónica",
+                10,
+                1299.00,
+                "Intel i7 / 16GB RAM",
+                "/com/mycompany/ecomercefinalproyect/images/laptop.png"
+        ));
+        catalogoPrincipal.add(new Productos(
+                "Smartphone X12",
+                "Electrónica",
+                25,
+                799.00,
+                "128GB / 5G",
+                "/com/mycompany/ecomercefinalproyect/images/smartphone.png"
+        ));
+        catalogoPrincipal.add(new Productos(
+                "Audífonos BT",
+                "Electrónica",
+                15,
+                249.00,
+                "Noise Cancelling",
+                "/com/mycompany/ecomercefinalproyect/images/audifonos.png"
+        ));
+    }
+
+    public void mostrarProductos(List<Productos> lista) {
+        if (contenedorProductos == null) {
+            return;
+        }
+        contenedorProductos.getChildren().clear();
+
+        for (Productos p : lista) {
+            try {
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource("/com/mycompany/ecomercefinalproyect/TarjetaProducto.fxml")
+                );
+                Parent tarjeta = loader.load();
+
+                TarjetaProductoController ctrl = loader.getController();
+                String precioFormateado = String.format("$%,.2f", p.getPrecio());
+
+                ctrl.setDatos(
+                        p.getNombre(),
+                        p.getDescripcion(),
+                        precioFormateado,
+                        p.getImagenURL(),
+                        () -> System.out.println("Agregar al carrito: " + p.getNombre()),
+                        () -> System.out.println("Favorito: " + p.getNombre())
+                );
+
+                contenedorProductos.getChildren().add(tarjeta);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    //-----------------------------------------------------------------------------------------------------------------------
     public void setUsuario(Usuario u) {
         this.usuarioActual = u;
     }
