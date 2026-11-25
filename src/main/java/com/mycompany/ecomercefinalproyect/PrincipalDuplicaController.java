@@ -94,6 +94,21 @@ public class PrincipalDuplicaController implements Initializable {
     }
 
     @FXML
+    void irAPrincipal(ActionEvent event) {
+        if (principal != null) {
+            principal.getChildren().clear();
+            if (contenedorProductos != null) {
+                principal.getChildren().add(contenedorProductos);
+                AnchorPane.setTopAnchor(contenedorProductos, 0.0);
+                AnchorPane.setBottomAnchor(contenedorProductos, 0.0);
+                AnchorPane.setLeftAnchor(contenedorProductos, 0.0);
+                AnchorPane.setRightAnchor(contenedorProductos, 0.0);
+            }
+        }
+        mostrarProductos(gestorProductos.obtenerTodos());
+    }
+
+    @FXML
     void buscarProducto(ActionEvent event) {
         String texto = (inputHeaderBuscarProducto != null)
                 ? inputHeaderBuscarProducto.getText().trim().toLowerCase()

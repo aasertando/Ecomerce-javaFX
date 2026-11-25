@@ -18,19 +18,18 @@ public class PrincipalAdminController {
     private Button btnHeaderBuscar;
 
     @FXML
-    private Button btnHeaderCompras;
-
-    @FXML
     private Button btnHeaderProductos;
-
-    @FXML
-    private Button btnHeaderUsuarios;
 
     @FXML
     private TextField inputHeaderBuscarProducto;
 
     @FXML
     private AnchorPane principal;
+
+    @FXML
+    private void initialize() {
+        cargarVista("/com/mycompany/ecomercefinalproyect/AdminProductos.fxml");
+    }
 
     private void cargarVista(String rutaFxml) {
         try {
@@ -78,17 +77,7 @@ public class PrincipalAdminController {
     }
 
     @FXML
-    void mostrarCompras(ActionEvent event) {
-        cargarVista("/com/mycompany/ecomercefinalproyect/AdminCompras.fxml");
-    }
-
-    @FXML
     void mostrarProductos(ActionEvent event) {
         cargarVista("/com/mycompany/ecomercefinalproyect/AdminProductos.fxml");
-    }
-
-    @FXML
-    void mostrarUsuarios(ActionEvent event) {
-        cargarVista("/com/mycompany/ecomercefinalproyect/AdminUsuarios.fxml");
     }
 }
