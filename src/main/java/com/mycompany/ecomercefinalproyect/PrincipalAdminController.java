@@ -53,7 +53,23 @@ public class PrincipalAdminController {
 
     @FXML
     void buscarProducto(ActionEvent event) {
-        cargarVista("/com/mycompany/ecomercefinalproyect/AdminProductos.fxml");
+        String texto = (inputHeaderBuscarProducto != null) ? inputHeaderBuscarProducto.getText() : "";
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/com/mycompany/ecomercefinalproyect/AdminProductos.fxml")
+            );
+            Parent vista = loader.load();
+            AdminProductosController ctrl = loader.getController();
+            ctrl.filtrar(texto);
+
+            principal.getChildren().setAll(vista);
+            AnchorPane.setTopAnchor(vista, 0.0);
+            AnchorPane.setBottomAnchor(vista, 0.0);
+            AnchorPane.setLeftAnchor(vista, 0.0);
+            AnchorPane.setRightAnchor(vista, 0.0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

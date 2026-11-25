@@ -8,7 +8,7 @@ public class Carrito {
     private static final Carrito instancia = new Carrito();
     private final List<ItemCarritoCompra> items = new ArrayList<>();
 
-    public Carrito() {
+    private Carrito() {
     }
 
     public static Carrito getInstancia() {

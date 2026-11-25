@@ -5,6 +5,7 @@ import Modelo.Productos;
 import Modelo.Usuario;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -94,7 +95,24 @@ public class PrincipalDuplicaController implements Initializable {
 
     @FXML
     void buscarProducto(ActionEvent event) {
+        String texto = (inputHeaderBuscarProducto != null)
+                ? inputHeaderBuscarProducto.getText().trim().toLowerCase()
+                : "";
 
+        if (texto.isEmpty()) {
+            mostrarProductos(gestorProductos.obtenerTodos());
+            return;
+        }
+
+        List<Productos> filtrados = new ArrayList<>();
+        for (Productos p : gestorProductos.obtenerTodos()) {
+            if ((p.getNombre() != null && p.getNombre().toLowerCase().contains(texto))
+                    || (p.getDescripcion() != null && p.getDescripcion().toLowerCase().contains(texto))
+                    || (p.getCategoria() != null && p.getCategoria().toLowerCase().contains(texto))) {
+                filtrados.add(p);
+            }
+        }
+        mostrarProductos(filtrados);
     }
 
     @FXML

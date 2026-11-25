@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="551.0" prefWidth="1280.0" stylesheets="@estilos/principalDuplica.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.HistorialComprasController">
+   <children>
+      <VBox spacing="20.0" AnchorPane.topAnchor="24.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.bottomAnchor="24.0">
+         <children>
+            <Label text="Historial de Compras" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+               <content>
+                  <VBox fx:id="contenedorHistorial" spacing="12.0" />
+               </content>
+            </ScrollPane>
+            <Label fx:id="lblVacio" text="Aún no tienes compras registradas." style="-fx-font-size: 15px; -fx-text-fill: #888888;" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
