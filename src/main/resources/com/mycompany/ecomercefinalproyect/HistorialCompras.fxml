@@ -1,22 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="551.0" prefWidth="1280.0" stylesheets="@estilos/principalDuplica.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.HistorialComprasController">
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" stylesheets="@estilos/principalDuplica.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox spacing="20.0" AnchorPane.topAnchor="24.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.bottomAnchor="24.0">
-         <children>
-            <Label text="Historial de Compras" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
-            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
-               <content>
-                  <VBox fx:id="contenedorHistorial" spacing="12.0" />
-               </content>
-            </ScrollPane>
-            <Label fx:id="lblVacio" text="Aún no tienes compras registradas." style="-fx-font-size: 15px; -fx-text-fill: #888888;" />
-         </children>
-      </VBox>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  
+                  <HBox alignment="CENTER_LEFT" prefHeight="72.0" spacing="14.0" style="-fx-background-color: #144d29;">
+                     <padding>
+                        <Insets left="24.0" right="24.0" />
+                     </padding>
+                     <children>
+                        
+                        <HBox alignment="CENTER" prefHeight="44.0" prefWidth="44.0">
+                           <children>
+                              <ImageView fx:id="imgLogo" fitHeight="45.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/MercafoFX.png" />
+                                 </image></ImageView>
+                           </children>
+                        </HBox>
+                        <Label text="MercadoFX" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+
+                        
+                        <TextField fx:id="inputHeaderBuscarProducto" prefHeight="46.0" promptText="Buscar productos..." style="-fx-background-color: white; -fx-background-radius: 8; -fx-font-size: 15px; -fx-padding: 0 14 0 14;" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+
+                        <Button fx:id="btnHeaderBuscar" mnemonicParsing="false" prefHeight="46.0" prefWidth="105.0" styleClass="boton-buscar" text="Buscar" />
+                        <Button fx:id="btnHeaderCarrito" mnemonicParsing="false" prefHeight="46.0" styleClass="boton-carrito" text="Carrito" />
+                        <Button fx:id="btnHeaderUsuario" mnemonicParsing="false" prefHeight="46.0" prefWidth="115.0" styleClass="boton-usuario" text="Usuario" />
+                     </children>
+                  </HBox>
+
+                  
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #2b6b43;">
+                     <padding>
+                        <Insets left="16.0" right="16.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="btnHeaderElectronica" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Electrónica" />
+                        <Button fx:id="btnHeaderRopa" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Ropa" />
+                        <Button fx:id="btnHeaderHogar" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Hogar" />
+                        <Button fx:id="btnHeaderDeportes" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Deportes" />
+                        <Button fx:id="btnHeaderJuguetes" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Juguetes" />
+                        <Button fx:id="btnHeaderBelleza" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Belleza" />
+                        <Button fx:id="btnHeaderAlimentos" mnemonicParsing="false" styleClass="boton-menu-categoria" text="Alimentos" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+
+         <center>
+            <VBox id="contenidoCentro" spacing="14.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="20.0" left="24.0" right="24.0" top="20.0" />
+               </padding>
+               <children>
+                 
+                  <VBox spacing="4.0">
+                     <children>
+                        <Label text="Historial de pedidos" textFill="#1f2937">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="Consulta tus pedidos anteriores y los productos que compraste." textFill="#6b7280">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+
+                
+                  <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e5e7eb; -fx-border-radius: 10;" VBox.vgrow="ALWAYS">
+                     <children>
+                        
+                        <HBox alignment="CENTER_LEFT" prefHeight="42.0" style="-fx-background-color: #f9fafb; -fx-background-radius: 10 10 0 0;">
+                           <padding>
+                              <Insets left="24.0" right="24.0" />
+                           </padding>
+                           <children>
+                              <Label prefWidth="100.0" text="Pedido" textFill="#4b5563">
+                                 <font><Font name="System Bold" size="12.0" /></font>
+                              </Label>
+                              <Label prefWidth="130.0" text="Fecha" textFill="#4b5563">
+                                 <font><Font name="System Bold" size="12.0" /></font>
+                              </Label>
+                              <Label prefWidth="420.0" text="Productos" textFill="#4b5563" HBox.hgrow="ALWAYS">
+                                 <font><Font name="System Bold" size="12.0" /></font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefWidth="130.0" text="Total" textFill="#4b5563">
+                                 <font><Font name="System Bold" size="12.0" /></font>
+                              </Label>
+                              <Label prefWidth="230.0" text="Información" textFill="#4b5563">
+                                 <padding><Insets left="24.0" /></padding>
+                                 <font><Font name="System Bold" size="12.0" /></font>
+                              </Label>
+                           </children>
+                        </HBox>
+
+                        <Separator />
+
+                        
+                        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: white;" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="contenedorPedidos" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
