@@ -16,8 +16,55 @@
     -fx-font-size: 15px;
 }
 
+.rectangulo-blanco{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12px;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 12px;
+}
 
+.titulo-rectangulo {
+    -fx-text-fill: #111827;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
 
+.etiquetas{
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 13px;
+}
 
+.casillas-texto{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent; 
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
 
+.casilla-editable {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #94A3B8;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 4px 10px;
+}
 
+#btnEditarInfo{
+    -fx-text-fill: #1E4B2C;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent;
+    -fx-border-color: #1E4B2C;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+    -fx-padding: 6px 16px;
+}
+
+#btnEditarInfo:hover {
+    -fx-background-color: rgba(30, 75, 44, 0.08);
+}
+
+#btnEditarInfo:pressed {
+    -fx-background-color: rgba(30, 75, 44, 0.15);
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefWidth="250.0" styleClass="menu-opcion" stylesheets="@estilos/login.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.MenuUsuarioController">
+   <padding>
+      <Insets bottom="8.0" top="8.0" />
+   </padding>
+   <children>
+      <!-- Botón 1: Perfil (con título + subtítulo dentro de graphic) -->
+      <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irAPerfil" styleClass="menu-usuario" stylesheets="@estilos/login.css">
+         <padding>
+            <Insets bottom="10.0" left="16.0" right="16.0" top="10.0" />
+         </padding>
+         <graphic>
+            <HBox alignment="CENTER_LEFT" spacing="12.0" stylesheets="@estilos/login.css">
+               <children>
+                  <Label styleClass="icono-menu" stylesheets="@estilos/login.css" text="👤" textFill="#2b5b34">
+                     <font><Font size="18.0" /></font>
+                  </Label>
+                  <VBox styleClass="menu-titulo" stylesheets="@estilos/login.css">
+                     <children>
+                        <Label text="Perfil" textFill="#1f2937">
+                           <font><Font name="System Bold" size="14.0" /></font>
+                        </Label>
+                        <Label text="Ver y cambiar información" textFill="#6b7280">
+                           <font><Font size="11.0" /></font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </graphic>
+      </Button>
+
+      <Separator styleClass="menu-divisor" />
+
+      <!-- Botón 2: Lista de deseados -->
+      <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irAListaDeseados" styleClass="menu-usuario" stylesheets="@estilos/login.css" text="Lista de deseados" textFill="#1f2937">
+         <padding>
+            <Insets bottom="12.0" left="16.0" right="16.0" top="12.0" />
+         </padding>
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Button>
+      <Separator prefWidth="200.0" styleClass="menu-divisor" />
+
+      <!-- Botón 3: Historial de compras -->
+      <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#irAHistorial" styleClass="menu-usuario" text="Historial de compras" textFill="#1f2937">
+         <padding>
+            <Insets bottom="12.0" left="16.0" right="16.0" top="12.0" />
+         </padding>
+         <font><Font name="System Bold" size="14.0" /></font>
+      </Button>
+
+      <Separator styleClass="menu-divisor" />
+
+      <!-- Botón 4: Cerrar sesión -->
+      <Button alignment="BASELINE_LEFT" graphicTextGap="12.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#cerrarSesion" styleClass="menu-usuario" text="Cerrar sesión" textFill="#1f2937">
+         <padding>
+            <Insets bottom="12.0" left="16.0" right="16.0" top="12.0" />
+         </padding>
+         <font><Font name="System Bold" size="14.0" /></font>
+         <graphic>
+            <Label text="↪" textFill="#1b5e20">
+               <font><Font name="System Bold" size="16.0" /></font>
+            </Label>
+         </graphic>
+      </Button>
+   </children>
+</VBox>

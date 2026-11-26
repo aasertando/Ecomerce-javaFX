@@ -1,14 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1260.0" stylesheets="@estilos/perfilUsuario.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1280.0" stylesheets="@estilos/perfilUsuario.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.PerfilUsuarioController">
    <children>
       <Label id="mi-perfil" layoutX="24.0" layoutY="16.0" stylesheets="@estilos/perfilUsuario.css" text="Mi perfil" />
       <Label layoutX="24.0" layoutY="53.0" styleClass="mensaje-peque" stylesheets="@estilos/perfilUsuario.css" text="Consulta tu información personal y los datos de tu cuenta." />
-      <Pane id="pane" layoutX="24.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" />
+      <VBox layoutX="24.0" layoutY="88.0" prefHeight="378.0" prefWidth="844.0" styleClass="rectangulo-blanco" stylesheets="@estilos/perfilUsuario.css">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="820.0">
+               <children>
+                  <Label styleClass="titulo-rectangulo" stylesheets="@estilos/perfilUsuario.css" text="Información personal">
+                     <padding>
+                        <Insets left="24.0" />
+                     </padding>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button id="btnEditarInfo" fx:id="btnEditarInfo" mnemonicParsing="false" onAction="#editarInfo" stylesheets="@estilos/perfilUsuario.css" text="Editar información">
+                     <HBox.margin>
+                        <Insets right="24.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="Nombre">
+               <padding>
+                  <Insets left="24.0" />
+               </padding>
+            </Label>
+            <TextField id="casillaNombreUsuario" fx:id="casillaNombreUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="422.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="24.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox prefHeight="22.0" prefWidth="820.0" spacing="280.0">
+               <children>
+                  <Label prefWidth="400.0" styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="Correo electrónico">
+                     <padding>
+                        <Insets left="24.0" />
+                     </padding>
+                  </Label>
+                  <Label styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="Teléfono" />
+               </children>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="820.0" spacing="16.0">
+               <children>
+                  <TextField id="casillaCorreoUsuario" fx:id="casillaCorreoUsuario" prefHeight="36.0" prefWidth="380.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="casillaTelefonoUsuario" fx:id="casillaTelefonoUsuario" prefHeight="36.0" prefWidth="380.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="24.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="22.0" prefWidth="820.0" spacing="280.0">
+               <children>
+                  <Label prefWidth="400.0" styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="Ciudad">
+                     <padding>
+                        <Insets left="24.0" />
+                     </padding>
+                  </Label>
+                  <Label styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="Dirección" />
+               </children>
+               <VBox.margin>
+                  <Insets top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="820.0" spacing="16.0">
+               <children>
+                  <TextField id="casillaCiudadUsuario" fx:id="casillaCiudadUsuario" prefHeight="36.0" prefWidth="380.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="casillaDirecciondUsuario" fx:id="casillaDirecciondUsuario" prefHeight="36.0" prefWidth="380.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="24.0" />
+               </VBox.margin>
+            </HBox>
+            <Button id="btnEditarInfo" fx:id="btnGuardarInfo" mnemonicParsing="false" onAction="#guardarInfo" stylesheets="@estilos/perfilUsuario.css" text="Guardar nueva informacion">
+               <VBox.margin>
+                  <Insets left="24.0" top="16.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="16.0" top="16.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="895.0" layoutY="88.0" prefHeight="378.0" prefWidth="367.0" styleClass="rectangulo-blanco" stylesheets="@estilos/perfilUsuario.css">
+         <children>
+            <Label styleClass="titulo-rectangulo" stylesheets="@estilos/perfilUsuario.css" text="Información de la cuenta">
+               <padding>
+                  <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+               </padding>
+            </Label>
+            <Label styleClass="etiquetas" stylesheets="@estilos/perfilUsuario.css" text="ID de usuario">
+               <padding>
+                  <Insets left="24.0" right="24.0" />
+               </padding>
+            </Label>
+            <TextField id="casillaIDUsuario" fx:id="casillaIDUsuario" editable="false" prefHeight="36.0" prefWidth="319.0" promptText="XXXXXXXXXXXX" styleClass="casillas-texto" stylesheets="@estilos/perfilUsuario.css">
+               <VBox.margin>
+                  <Insets left="24.0" right="24.0" top="4.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

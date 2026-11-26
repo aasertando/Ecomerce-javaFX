@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "juan pablo",
+    "email": "juan@asd.com",
+    "telefono": "3124567890",
+    "direccion": "manzana 4",
+    "ciudad": "monteria",
+    "contraseña": "12345"
+  },
+  {
+    "nombre": "andrea",
+    "email": "asdasd",
+    "telefono": "3333333",
+    "direccion": "mmmmmm",
+    "ciudad": "ccccccc",
+    "contraseña": "123"
+  },
+  {
+    "nombre": "Matias",
+    "email": "matias@gmail.com",
+    "telefono": "3166858200",
+    "direccion": "Santa fe",
+    "ciudad": "Monteria",
+    "contraseña": "12345"
+  },
+  {
+    "nombre": "jose",
+    "email": "jose@",
+    "telefono": "32183728323",
+    "direccion": "casa",
+    "ciudad": "cordoba",
+    "contraseña": "jose"
+  }
+]

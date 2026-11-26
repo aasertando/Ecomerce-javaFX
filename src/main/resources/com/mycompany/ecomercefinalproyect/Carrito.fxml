@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane id="fondo-blanco" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="1280.0" stylesheets="@estilos/Carrito.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.CarritoController">
+   <children>
+      <ScrollPane layoutX="24.0" layoutY="83.0" prefHeight="421.0" prefWidth="738.0" stylesheets="@estilos/Carrito.css">
+         <content>
+            <VBox fx:id="contenedorProductos" prefWidth="710.0" spacing="10.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css" />
+         </content>
+      </ScrollPane>
+      <Label id="mi-carrito" layoutX="24.0" layoutY="12.0" prefWidth="139.0" stylesheets="@estilos/Carrito.css" text="Mi carrito" />
+      <Label layoutX="24.0" layoutY="49.0" styleClass="mensaje-peque" stylesheets="@estilos/Carrito.css" text="Revisa los productos, elige cómo pagar y confírmalo." />
+      <Label layoutX="24.0" layoutY="512.0" styleClass="mensaje-peque" stylesheets="@estilos/Carrito.css" text="La dirección de envío se administra desde tu perfil. Si necesitas actualizarla, puedes hacerlo allí antes de confirmar." />
+      <VBox layoutX="894.0" layoutY="83.0" prefHeight="204.0" prefWidth="380.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css">
+         <children>
+            <Label styleClass="titulo-chiquito" stylesheets="@estilos/Carrito.css" text="Método de pago">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="mensaje-chiquito" stylesheets="@estilos/Carrito.css" text="Elige cómo pagar tu pedido.">
+               <VBox.margin>
+                  <Insets bottom="8.0" />
+               </VBox.margin>
+            </Label>
+            <RadioButton fx:id="rbEfectivo" mnemonicParsing="false" prefHeight="58.0" prefWidth="346.0" selected="true" styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Efectivo contra entrega">
+               <padding>
+                  <Insets bottom="8.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupoPago" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbNequi" mnemonicParsing="false" prefHeight="58.0" prefWidth="346.0" styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Nequi" toggleGroup="$grupoPago">
+               <padding>
+                  <Insets bottom="8.0" />
+               </padding>
+            </RadioButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="16.0" right="16.0" top="10.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="894.0" layoutY="294.0" prefHeight="200.0" prefWidth="380.0" styleClass="pane-blanco" stylesheets="@estilos/Carrito.css">
+         <children>
+            <Label styleClass="titulo-chiquito" stylesheets="@estilos/Carrito.css" text="Resumen de compra">
+               <padding>
+                  <Insets bottom="6.0" />
+               </padding>
+            </Label>
+            <HBox prefHeight="29.0" prefWidth="346.0">
+               <children>
+                  <Label styleClass="mensaje-chiquito" stylesheets="@estilos/Carrito.css" text="Subtotal">
+                     <padding>
+                        <Insets bottom="4.0" right="165.0" />
+                     </padding>
+                  </Label>
+                  <Label id="subtotal" fx:id="lblSubtotal" stylesheets="@estilos/Carrito.css" text="\$0.00" />
+               </children>
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="346.0">
+               <children>
+                  <Label styleClass="mensaje-chiquito" stylesheets="@estilos/Carrito.css" text="Envío">
+                     <padding>
+                        <Insets bottom="6.0" right="225.0" />
+                     </padding>
+                  </Label>
+                  <Label id="envio" stylesheets="@estilos/Carrito.css" text="GRATIS" />
+               </children>
+            </HBox>
+            <Line endX="247.2928924560547" endY="-0.621320366859436" startX="-100.0" stroke="#e5e7eb">
+               <VBox.margin>
+                  <Insets bottom="6.0" />
+               </VBox.margin>
+            </Line>
+            <HBox prefHeight="37.0" prefWidth="349.0">
+               <children>
+                  <Label styleClass="texto-negrillas" stylesheets="@estilos/Carrito.css" text="Total a pagar">
+                     <padding>
+                        <Insets right="90.0" />
+                     </padding>
+                  </Label>
+                  <Label id="pagar" fx:id="lblTotalPagar" stylesheets="@estilos/Carrito.css" text="\$0.00" />
+               </children>
+               <padding>
+                  <Insets bottom="6.0" />
+               </padding>
+            </HBox>
+            <Button id="btn-compra" fx:id="btnConfirmarPedido" mnemonicParsing="false" onAction="#confirmarPedido" prefHeight="44.0" prefWidth="348.0" stylesheets="@estilos/Carrito.css" text="Confirmar pedido" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="16.0" right="16.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

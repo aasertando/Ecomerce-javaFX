@@ -1,54 +1,63 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author garci
- */
 public class Carrito {
 
-    private ArrayList<Producto> productos;
-    private int total;
+    private static final Carrito instancia = new Carrito();
+    private final List<ItemCarritoCompra> items = new ArrayList<>();
 
-    public boolean agregarProducto(Producto p) {
-
-        return false;
+    private Carrito() {
     }
 
-    public boolean eliminarProducto(int idProducto) {
-
-        return false;
+    public static Carrito getInstancia() {
+        return instancia;
     }
 
-    public int calcularSubtotal() {
-
-        return 0;
+    public void agregarProducto(Productos producto) {
+        if (producto == null) {
+            return;
+        }
+        for (ItemCarritoCompra item : items) {
+            if (item.getProducto() != null
+                    && item.getProducto().getNombre().equalsIgnoreCase(producto.getNombre())) {
+                item.incrementar();
+                return;
+            }
+        }
+        items.add(new ItemCarritoCompra(producto, 1));
     }
 
-    public Carrito(ArrayList<Producto> productos, int total) {
-        this.productos = productos;
-        this.total = total;
+    public void eliminarProducto(Productos producto) {
+        if (producto == null) {
+            return;
+        }
+        items.removeIf(item -> item.getProducto() != null
+                && item.getProducto().getNombre().equalsIgnoreCase(producto.getNombre()));
     }
 
-    public ArrayList<Producto> getProductos() {
-        return productos;
+    public List<ItemCarritoCompra> getItems() {
+        return items;
     }
 
-    public void setProductos(ArrayList<Producto> productos) {
-        this.productos = productos;
-    }
-
-    public int getTotal() {
+    public double calcularTotal() {
+        double total = 0.0;
+        for (ItemCarritoCompra item : items) {
+            total += item.getSubtotal();
+        }
         return total;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public int getCantidadTotal() {
+        int total = 0;
+        for (ItemCarritoCompra item : items) {
+            total += item.getCantidad();
+        }
+        return total;
     }
 
+    public void vaciar() {
+        items.clear();
+    }
 }

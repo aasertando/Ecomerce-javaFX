@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="710.0" styleClass="item-carrito" stylesheets="@estilos/itemCarrito.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.ItemCarritoController">
+   <children>
+      <ImageView id="imagen" fx:id="imgProducto" fitHeight="84.0" fitWidth="84.0" layoutX="18.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+      <Label id="nombre" fx:id="lblNombre" layoutX="116.0" layoutY="16.0" stylesheets="@estilos/itemCarrito.css" text="Smartphone X12" />
+      <Label id="detalle" fx:id="lblDetalle" layoutX="116.0" layoutY="46.0" stylesheets="@estilos/itemCarrito.css" text="128GB / 5G" />
+      <Label id="precio" fx:id="lblPrecioUnitario" layoutX="116.0" layoutY="78.0" stylesheets="@estilos/itemCarrito.css" text="\$799.00 c/u" />
+      <Label id="subtotal" fx:id="lblSubtotal" alignment="CENTER_RIGHT" layoutY="30.0" prefWidth="220.0" stylesheets="@estilos/itemCarrito.css" text="\$799.00" AnchorPane.rightAnchor="20.0" />
+      <Button id="btn-eliminar" fx:id="btnEliminar" layoutY="66.0" mnemonicParsing="false" onAction="#handleEliminar" stylesheets="@estilos/itemCarrito.css" text="Eliminar" AnchorPane.rightAnchor="20.0" />
+   </children>
+</AnchorPane>

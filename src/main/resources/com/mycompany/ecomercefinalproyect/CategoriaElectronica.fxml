@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="1260.0" style="-fx-background-color: lightBlue;" stylesheets="@estilos/categoriaelectronica.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.CategoriaElectronicaController">
+<AnchorPane id="contenidoCentro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="1280.0" stylesheets="@estilos/principalDuplica.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.CategoriaElectronicaController">
+   <children>
+      <TilePane fx:id="contenedorProductos" hgap="16.0" prefHeight="551.0" prefWidth="1280.0" vgap="16.0" />
+   </children>
 </AnchorPane>

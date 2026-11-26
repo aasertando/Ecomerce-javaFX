@@ -8,31 +8,25 @@ package Modelo;
  *
  * @author garci
  */
-public class Producto {
-
-    private int id;
+public class Productos {
     private String nombre;
-    private String descripción;
     private String categoria;
+    private int Stock;
     private double precio;
-    private String foto;
+    private String descripcion;
+    private String imagenURL;
+    
+    public Productos(){
+        
+    }
 
-    public Producto(int id, String nombre, String categoria, double precio, String descripción, String foto) {
-
-        this.id = id;
+    public Productos(String nombre, String categoria, int Stock, double precio, String descripcion, String imagenURL) {
         this.nombre = nombre;
         this.categoria = categoria;
+        this.Stock = Stock;
         this.precio = precio;
-        this.descripción = descripción;
-        this.foto = foto;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.descripcion = descripcion;
+        this.imagenURL = imagenURL;
     }
 
     public String getNombre() {
@@ -51,6 +45,14 @@ public class Producto {
         this.categoria = categoria;
     }
 
+    public int getStock() {
+        return Stock;
+    }
+
+    public void setStock(int Stock) {
+        this.Stock = Stock;
+    }
+
     public double getPrecio() {
         return precio;
     }
@@ -59,20 +61,21 @@ public class Producto {
         this.precio = precio;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getImagenURL() {
+        return imagenURL;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setImagenURL(String imagenURL) {
+        this.imagenURL = imagenURL;
     }
-
+    
+    
 }

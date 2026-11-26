@@ -37,21 +37,21 @@
                </VBox.margin>
             </Label>
             <Label styleClass="etiqueta" stylesheets="@estilos/login.css" text="Usuario" />
-            <TextField prefHeight="45.0" promptText="Nombre de usuario" styleClass="campo" stylesheets="@estilos/login.css" />
+            <TextField fx:id="txtUsuario" prefHeight="45.0" promptText="Nombre de usuario" styleClass="campo" stylesheets="@estilos/login.css" />
             <Label styleClass="etiqueta" stylesheets="@estilos/login.css" text="Contraseña">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <PasswordField prefHeight="45.0" promptText="*******************" styleClass="campo" stylesheets="@estilos/login.css" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="45.0" styleClass="boton-ingresar" stylesheets="@estilos/login.css" text="Ingresar">
+            <PasswordField fx:id="txtContrasena" onAction="#ingresar" prefHeight="45.0" promptText="*******************" styleClass="campo" stylesheets="@estilos/login.css" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ingresar" prefHeight="45.0" styleClass="boton-ingresar" stylesheets="@estilos/login.css" text="Ingresar">
                <VBox.margin>
                   <Insets top="31.0" />
                </VBox.margin>
             </Button>
          </children>
       </VBox>
-      <Hyperlink styleClass="enlace" stylesheets="@estilos/login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
+      <Hyperlink onAction="#irARegistro" styleClass="enlace" stylesheets="@estilos/login.css" text="¿No tienes una cuenta? Registrate." StackPane.alignment="BOTTOM_RIGHT">
          <StackPane.margin>
             <Insets bottom="14.0" right="17.0" />
          </StackPane.margin>

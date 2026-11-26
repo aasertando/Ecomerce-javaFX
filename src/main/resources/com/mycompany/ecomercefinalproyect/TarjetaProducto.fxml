@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="tarjeta-producto" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.62" prefWidth="236.71" stylesheets="@estilos/tarjetaProductos.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.TarjetaProductoController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="imgProducto" fitHeight="157.0" fitWidth="235.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+      <Label id="nombre" fx:id="lblNombre" stylesheets="@estilos/tarjetaProductos.css" text="Laptop Pro 14">
+         <VBox.margin>
+            <Insets left="6.0" />
+         </VBox.margin>
+      </Label>
+      <Label id="detalle" fx:id="lblDetalle" stylesheets="@estilos/tarjetaProductos.css" text="128GB / 5G">
+         <VBox.margin>
+            <Insets left="6.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="15.0" />
+         </padding>
+      </Label>
+      <Label id="precio" fx:id="lblPrecio" stylesheets="@estilos/tarjetaProductos.css" text="\$799.00">
+         <padding>
+            <Insets bottom="5.0" left="6.0" />
+         </padding>
+      </Label>
+      <HBox prefHeight="37.0" prefWidth="184.0">
+         <children>
+            <Button id="boton-agregar-carrito" fx:id="btnAgregarCarrito" mnemonicParsing="false" onAction="#handleAgregarCarrito" prefHeight="37.0" prefWidth="184.0" stylesheets="@estilos/tarjetaProductos.css" text="Agregar al carrito" />
+            <Button id="boton-lista-deseos" fx:id="btnFavorito" mnemonicParsing="false" onAction="#handleFavorito" prefHeight="39.0" prefWidth="52.0" stylesheets="@estilos/tarjetaProductos.css" text="💛" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

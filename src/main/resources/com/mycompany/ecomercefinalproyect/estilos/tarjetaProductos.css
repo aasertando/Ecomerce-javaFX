@@ -1,0 +1,45 @@
+#tarjeta-producto {
+    -fx-background-radius: 11.84px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 11.84px;
+}
+
+#nombre {
+    -fx-text-fill: #111827;
+    -fx-font-size: 19.73px;
+    -fx-font-weight: bold;
+}
+
+#detalle {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 17.75px;
+}
+
+#precio {
+    -fx-text-fill: #1E4B2C;
+    -fx-font-size: 25.64px;
+    -fx-font-weight: bold;
+}
+
+#boton-agregar-carrito {
+    -fx-background-radius: 7.89px;
+    -fx-background-color: #1E4B2C;
+    -fx-border-radius: 7.89px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 15.75px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#boton-lista-deseos {
+    -fx-border-radius: 6px;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.boton-agregar-carrito:hover {
+    -fx-background-color: #1b5e3a;
+}

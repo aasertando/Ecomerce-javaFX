@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" stylesheets="@estilos/principalDuplica.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.ListaDeseadosController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox BorderPane.alignment="CENTER" />
+         </top>
+
+         <center>
+            <VBox id="contenidoCentro" spacing="14.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="12.0" left="24.0" right="24.0" top="20.0" />
+               </padding>
+               <children>
+                  
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <VBox spacing="4.0">
+                           <children>
+                              <Label text="Mi lista de deseos" textFill="#1f2937">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Tus favoritos, en un solo lugar. Guárdalos para después o agrégalos al carrito." textFill="#6b7280">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+
+                  
+                  <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #e5e7eb; -fx-border-radius: 10;" VBox.vgrow="ALWAYS">
+                     <children>
+
+                        <Separator />
+
+                        
+                        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: white;" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="contenedorDeseados" spacing="10.0">
+                                 <padding>
+                                    <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -9,35 +9,21 @@ package Modelo;
  * @author garci
  */
 public class Usuario {
-
-    private int id;
+    
     private String nombre;
     private String email;
     private String telefono;
     private String direccion;
     private String ciudad;
     private String contraseña;
-    private Carrito carrito;
-    private ListaDeseos listaDeseos;
 
-    public Usuario(int id, String nombre, String email, String telefono, String direccion, String ciudad, String contraseña, Carrito carrito, ListaDeseos listaDeseos) {
-        this.id = id;
+    public Usuario(String nombre, String email, String telefono, String direccion, String ciudad, String contraseña) {
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
         this.direccion = direccion;
         this.ciudad = ciudad;
         this.contraseña = contraseña;
-        this.carrito = carrito;
-        this.listaDeseos = listaDeseos;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -87,21 +73,7 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-
-    public Carrito getCarrito() {
-        return carrito;
-    }
-
-    public void setCarrito(Carrito carrito) {
-        this.carrito = carrito;
-    }
-
-    public ListaDeseos getListaDeseos() {
-        return listaDeseos;
-    }
-
-    public void setListaDeseos(ListaDeseos listaDeseos) {
-        this.listaDeseos = listaDeseos;
-    }
-
+    
+    
+    
 }
