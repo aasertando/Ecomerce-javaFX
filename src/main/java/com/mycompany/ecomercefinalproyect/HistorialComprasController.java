@@ -1,33 +1,64 @@
 package com.mycompany.ecomercefinalproyect;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import Modelo.Pedido;
+import java.util.List;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
-public class HistorialComprasController implements Initializable {
+public class HistorialComprasController {
 
     @FXML
-    private VBox contenedorHistorial;
+    private VBox contenedorPedidos;
 
     @FXML
-    private Label lblVacio;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // Por ahora no hay persistencia de pedidos confirmados.
-        // Se muestra el mensaje vacío hasta que se implemente.
-        mostrarPlaceholder();
+    public void initialize() {
+        cargarHistorial();
     }
 
-    private void mostrarPlaceholder() {
-        boolean hayItems = contenedorHistorial != null
-                && !contenedorHistorial.getChildren().isEmpty();
-        if (lblVacio != null) {
-            lblVacio.setVisible(!hayItems);
-            lblVacio.setManaged(!hayItems);
+    private void cargarHistorial() {
+        if (contenedorPedidos == null) {
+            return;
+        }
+        contenedorPedidos.getChildren().clear();
+
+        List<Pedido> pedidos = GestorHistorialCompras.obtenerPorUsuario();
+        if (pedidos.isEmpty()) {
+            return;
+        }
+
+        int numero = pedidos.size();
+        for (int i = pedidos.size() - 1; i >= 0; i--) {
+            Pedido pedido = pedidos.get(i);
+
+            StringBuilder productos = new StringBuilder();
+            if (pedido.getItems() != null) {
+                for (Modelo.ItemCarritoCompra item : pedido.getItems()) {
+                    if (productos.length() > 0) {
+                        productos.append(", ");
+                    }
+                    productos.append(item.getProducto().getNombre())
+                            .append(" x")
+                            .append(item.getCantidad());
+                }
+            }
+
+            try {
+                javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
+                        getClass().getResource("/com/mycompany/ecomercefinalproyect/MoldeHistorialCompra.fxml")
+                );
+                javafx.scene.Parent fila = loader.load();
+                MoldeHistorialCompraController ctrl = loader.getController();
+                ctrl.setDatos(
+                        "#" + numero,
+                        productos.toString(),
+                        String.format("$%,.2f", pedido.getTotal())
+                );
+                contenedorPedidos.getChildren().add(fila);
+            } catch (java.io.IOException e) {
+                e.printStackTrace();
+            }
+
+            numero--;
         }
     }
 }

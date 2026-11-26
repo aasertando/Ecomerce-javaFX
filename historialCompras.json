@@ -1,0 +1,73 @@
+[
+  {
+    "usuario": "matias@gmail.com",
+    "fecha": "25/11/2026 19:49",
+    "metodoPago": "Efectivo contra entrega",
+    "total": 140249.0,
+    "items": [
+      {
+        "producto": {
+          "nombre": "Audifonos BT",
+          "categoria": "Electronica",
+          "Stock": 15,
+          "precio": 249.0,
+          "descripcion": "Noise Cancelling",
+          "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
+        },
+        "cantidad": 1
+      },
+      {
+        "producto": {
+          "nombre": "Sueter",
+          "categoria": "Ropa",
+          "Stock": 10,
+          "precio": 70000.0,
+          "descripcion": "Nitido",
+          "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/Uniforme.png"
+        },
+        "cantidad": 2
+      }
+    ]
+  },
+  {
+    "usuario": "matias@gmail.com",
+    "fecha": "25/11/2026 20:39",
+    "metodoPago": "Efectivo contra entrega",
+    "total": 71048.0,
+    "items": [
+      {
+        "producto": {
+          "nombre": "Sueter",
+          "categoria": "Ropa",
+          "Stock": 10,
+          "precio": 70000.0,
+          "descripcion": "Nitido",
+          "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/Uniforme.png"
+        },
+        "cantidad": 1
+      },
+      {
+        "producto": {
+          "nombre": "Smartphone X12",
+          "categoria": "Electronica",
+          "Stock": 25,
+          "precio": 799.0,
+          "descripcion": "128GB / 5G",
+          "imagenURL": "/com/mycompany/ecomercefinalproyect/img/smartphone.png"
+        },
+        "cantidad": 1
+      },
+      {
+        "producto": {
+          "nombre": "Audifonos BT",
+          "categoria": "Electronica",
+          "Stock": 15,
+          "precio": 249.0,
+          "descripcion": "Noise Cancelling",
+          "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
+        },
+        "cantidad": 1
+      }
+    ]
+  }
+]

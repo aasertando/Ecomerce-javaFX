@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.MoldeHistorialCompraController">
+   <children>
+      <Label id="pedido" fx:id="Pedido" stylesheets="@estilos/moldeHistorialCompras.css" text="#Pedido">
+         <HBox.margin>
+            <Insets right="150.0" />
+         </HBox.margin>
+         <padding>
+            <Insets left="20.0" right="120.0" />
+         </padding>
+      </Label>
+      <Label id="productos" fx:id="Productos" stylesheets="@estilos/moldeHistorialCompras.css" text="Productos">
+         <padding>
+            <Insets right="120.0" />
+         </padding>
+         <HBox.margin>
+            <Insets right="280.0" />
+         </HBox.margin>
+      </Label>
+      <Label id="total" fx:id="Total" stylesheets="@estilos/moldeHistorialCompras.css" text="Total" />
+   </children>
+   <padding>
+      <Insets left="24.0" top="55.0" />
+   </padding>
+</HBox>
