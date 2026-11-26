@@ -1,8 +1,8 @@
 package Modelo;
 
 /**
- * Enum con todas las categorías disponibles en la tienda.
- * Usar getNombre() para obtener el String exacto que se guarda en JSON.
+ * Enum con todas las categorías disponibles en la tienda. Usar getNombre() para
+ * obtener el String exacto que se guarda en JSON.
  */
 public enum Categorias {
 
@@ -20,7 +20,9 @@ public enum Categorias {
         this.nombre = nombre;
     }
 
-    /** Retorna el nombre tal como se guarda en productos.json */
+    /**
+     * Retorna el nombre tal como se guarda en productos.json
+     */
     public String getNombre() {
         return nombre;
     }
