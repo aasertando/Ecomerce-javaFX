@@ -1,0 +1,17 @@
+#pedido {
+    -fx-text-fill: #111827;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+#productos {
+    -fx-text-fill: #11827;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+#total {
+    -fx-text-fill: #1E4B2C;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}

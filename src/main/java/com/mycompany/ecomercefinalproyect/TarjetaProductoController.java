@@ -35,6 +35,12 @@ public class TarjetaProductoController {
     private Runnable onAgregarCarrito;
     private Runnable onFavorito;
 
+    public void setFavoritoActivo(boolean activo) {
+        if (btnFavorito != null) {
+            btnFavorito.setText(activo ? "\u2665" : "\u2661");
+        }
+    }
+
     private void cargarImagen(ImageView imageView, String ruta) {
         if (imageView == null || ruta == null || ruta.isBlank()) {
             return;

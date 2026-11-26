@@ -1,33 +1,60 @@
 package com.mycompany.ecomercefinalproyect;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import Modelo.Productos;
+import java.util.List;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 
-public class ListaDeseadosController implements Initializable {
-
-    @FXML
-    private TilePane contenedorDeseados;
+public class ListaDeseadosController {
 
     @FXML
-    private Label lblVacio;
+    private VBox contenedorDeseados;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // Por ahora no hay modelo de datos para favoritos.
-        // Se muestra el mensaje vacío hasta que se implemente la persistencia.
-        mostrarPlaceholder();
+    @FXML
+    private Hyperlink linkSeguirComprando;
+
+    @FXML
+    public void initialize() {
+        if (linkSeguirComprando != null) {
+            linkSeguirComprando.setOnAction(e -> {
+                // no-op: la navegación se gestiona desde el menú principal
+            });
+        }
+        cargarDeseados();
     }
 
-    private void mostrarPlaceholder() {
-        boolean hayItems = contenedorDeseados != null
-                && !contenedorDeseados.getChildren().isEmpty();
-        if (lblVacio != null) {
-            lblVacio.setVisible(!hayItems);
-            lblVacio.setManaged(!hayItems);
+    private void cargarDeseados() {
+        if (contenedorDeseados == null) {
+            return;
+        }
+        contenedorDeseados.getChildren().clear();
+
+        List<Productos> lista = GestorListaDeseados.obtenerProductos();
+        if (lista.isEmpty()) {
+            Label vacio = new Label("Aún no tienes productos en tu lista de deseados.");
+            vacio.setStyle("-fx-text-fill: #6b7280; -fx-font-size: 14px;");
+            contenedorDeseados.getChildren().add(vacio);
+            return;
+        }
+
+        for (Productos p : lista) {
+            try {
+                javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
+                        getClass().getResource("/com/mycompany/ecomercefinalproyect/MoldeProductosListaDeseados.fxml")
+                );
+                javafx.scene.Parent fila = loader.load();
+                MoldeProductosListaDeseadosController ctrl = loader.getController();
+                ctrl.setDatos(
+                        p.getNombre(),
+                        p.getDescripcion(),
+                        String.format("$%,.2f", p.getPrecio())
+                );
+                contenedorDeseados.getChildren().add(fila);
+            } catch (java.io.IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

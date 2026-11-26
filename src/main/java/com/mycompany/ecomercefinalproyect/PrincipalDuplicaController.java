@@ -77,8 +77,13 @@ public class PrincipalDuplicaController implements Initializable {
                                     "¡" + p.getNombre() + " se agrego a tu carrito!"
                             );
                         },
-                        () -> System.out.println("Favorito: " + p.getNombre())
+                        () -> {
+                            GestorListaDeseados.alternar(p);
+                            ctrl.setFavoritoActivo(GestorListaDeseados.contiene(p));
+                        }
                 );
+
+                ctrl.setFavoritoActivo(GestorListaDeseados.contiene(p));
 
                 contenedorProductos.getChildren().add(tarjeta);
             } catch (IOException e) {

@@ -2,8 +2,14 @@ package com.mycompany.ecomercefinalproyect;
 
 import Modelo.Carrito;
 import Modelo.ItemCarritoCompra;
+import Modelo.Pedido;
+import Modelo.Sesion;
+import Modelo.Usuario;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -127,6 +133,17 @@ public class CarritoController implements Initializable {
                 "Pedido Confirmado",
                 "¡Gracias por tu compra!\nMetodo de pago: " + metodoPago + "\nTotal pagado: " + totalStr
         );
+
+        // Registrar en historial de compras
+        Usuario usuarioActual = Sesion.getUsuarioActual();
+        String usuario = (usuarioActual != null)
+                ? (usuarioActual.getEmail() != null && !usuarioActual.getEmail().isBlank()
+                        ? usuarioActual.getEmail() : usuarioActual.getNombre())
+                : "invitado";
+        String fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+        List<ItemCarritoCompra> itemsCopia = new ArrayList<>(Carrito.getInstancia().getItems());
+        Pedido pedido = new Pedido(usuario, fecha, metodoPago, total, itemsCopia);
+        GestorHistorialCompras.agregar(pedido);
 
         Carrito.getInstancia().vaciar();
         refrescarListaProductos();
