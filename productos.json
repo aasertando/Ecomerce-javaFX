@@ -16,14 +16,6 @@
     "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
   },
   {
-    "nombre": "Gallo Fino",
-    "categoria": "Alimentos",
-    "Stock": 10,
-    "precio": 800000.0,
-    "descripcion": "Gallo de raza pura",
-    "imagenURL": "file:/home/aser/Imágenes/Capturas%20de%20pantalla/Captura%20desde%202026-10-21%2016-02-46.png"
-  },
-  {
     "nombre": "pato de hule",
     "categoria": "Juguetes",
     "Stock": 10,
@@ -102,5 +94,13 @@
     "precio": 43000.0,
     "descripcion": "impreso en 3d de manera vertical",
     "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-10-20%2013-43-46.png"
+  },
+  {
+    "nombre": "Gallo fino",
+    "categoria": "Alimentos",
+    "Stock": 10,
+    "precio": 800000.0,
+    "descripcion": "gallo de raza pura, gana todas las peleas",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-10-21%2016-02-46.png"
   }
 ]
