@@ -115,7 +115,7 @@
    <center>
       <AnchorPane id="contenidoCentro" fx:id="principal" prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane prefHeight="551.0" prefWidth="1278.0">
+            <ScrollPane fx:id="scrollProductos" prefHeight="551.0" prefWidth="1278.0">
                <content>
                   <TilePane fx:id="contenedorProductos" hgap="16.0" prefHeight="551.0" prefWidth="1280.0" vgap="16.0" />
                </content>

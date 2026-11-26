@@ -16,6 +16,7 @@ import javafx.geometry.Bounds;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.TilePane;
@@ -40,6 +41,9 @@ public class PrincipalDuplicaController implements Initializable {
     //Cargar productos en la pantalla principal y productos
     @FXML
     private TilePane contenedorProductos;
+
+    @FXML
+    private ScrollPane scrollProductos;
 
     private final GestorProductos gestorProductos = new GestorProductos(); // Gestor de productos JSON
 
@@ -102,12 +106,13 @@ public class PrincipalDuplicaController implements Initializable {
     void irAPrincipal(ActionEvent event) {
         if (principal != null) {
             principal.getChildren().clear();
-            if (contenedorProductos != null) {
-                principal.getChildren().add(contenedorProductos);
-                AnchorPane.setTopAnchor(contenedorProductos, 0.0);
-                AnchorPane.setBottomAnchor(contenedorProductos, 0.0);
-                AnchorPane.setLeftAnchor(contenedorProductos, 0.0);
-                AnchorPane.setRightAnchor(contenedorProductos, 0.0);
+            if (scrollProductos != null && contenedorProductos != null) {
+                scrollProductos.setContent(contenedorProductos);
+                principal.getChildren().add(scrollProductos);
+                AnchorPane.setTopAnchor(scrollProductos, 0.0);
+                AnchorPane.setBottomAnchor(scrollProductos, 0.0);
+                AnchorPane.setLeftAnchor(scrollProductos, 0.0);
+                AnchorPane.setRightAnchor(scrollProductos, 0.0);
             }
         }
         mostrarProductos(gestorProductos.obtenerTodos());
