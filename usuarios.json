@@ -30,5 +30,13 @@
     "direccion": "casa",
     "ciudad": "cordoba",
     "contraseña": "jose"
+  },
+  {
+    "nombre": "juan",
+    "email": "jaudsajd",
+    "telefono": "132123",
+    "direccion": "alkjdlakjsl",
+    "ciudad": "kaldjalsjdl",
+    "contraseña": "123"
   }
 ]

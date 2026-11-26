@@ -22,5 +22,13 @@
     "precio": 70000.0,
     "descripcion": "Nitido",
     "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/Uniforme.png"
+  },
+  {
+    "nombre": "Gallo Fino",
+    "categoria": "Alimentos",
+    "Stock": 10,
+    "precio": 800000.0,
+    "descripcion": "Gallo de raza pura",
+    "imagenURL": "file:/home/aser/Imágenes/Capturas%20de%20pantalla/Captura%20desde%202026-10-21%2016-02-46.png"
   }
 ]
