@@ -52,8 +52,13 @@ public class CategoriaAlimentosController implements Initializable {
                                 Carrito.getInstancia().agregarProducto(p);
                                 mostrarAlerta(Alert.AlertType.INFORMATION, "Carrito de compras", "¡" + p.getNombre() + " se agrego a tu carrito!");
                             },
-                            () -> System.out.println("Favorito: " + p.getNombre())
+                            () -> {
+                  GestorListaDeseados.alternar(p);
+                  ctrl.setFavoritoActivo(GestorListaDeseados.contiene(p));
+              }
                     );
+
+                    ctrl.setFavoritoActivo(GestorListaDeseados.contiene(p));
 
                     contenedorProductos.getChildren().add(tarjeta);
                 } catch (IOException e) {

@@ -69,5 +69,24 @@
         "cantidad": 1
       }
     ]
+  },
+  {
+    "usuario": "jaudsajd",
+    "fecha": "25/11/2026 21:03",
+    "metodoPago": "Efectivo contra entrega",
+    "total": 498.0,
+    "items": [
+      {
+        "producto": {
+          "nombre": "Audifonos BT",
+          "categoria": "Electronica",
+          "Stock": 15,
+          "precio": 249.0,
+          "descripcion": "Noise Cancelling",
+          "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
+        },
+        "cantidad": 2
+      }
+    ]
   }
 ]
