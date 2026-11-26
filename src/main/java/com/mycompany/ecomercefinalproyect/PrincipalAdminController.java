@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 public class PrincipalAdminController {
 
@@ -46,6 +48,42 @@ public class PrincipalAdminController {
             AnchorPane.setLeftAnchor(vista, 0.0);
             AnchorPane.setRightAnchor(vista, 0.0);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+ 
+    private Popup menuPopup;
+
+    @FXML
+    void mostrarMenuAdmin(ActionEvent event) {
+        if (menuPopup != null && menuPopup.isShowing()) {
+            menuPopup.hide();
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/ecomercefinalproyect/MenuAdmin.fxml"));
+            Parent contenidoMenu = loader.load();
+
+            Stage stage = (Stage) btnHeaderAdministrador.getScene().getWindow();
+
+            menuPopup = new Popup();
+            menuPopup.getContent().add(contenidoMenu);
+            menuPopup.setAutoHide(true);
+
+            MenuAdminController controller = loader.getController();
+            controller.inicializar(stage, menuPopup);
+
+            javafx.geometry.Bounds limitesBoton = btnHeaderAdministrador.localToScreen(btnHeaderAdministrador.getBoundsInLocal());
+            double anchoMenu = 210.0;
+            double posX = limitesBoton.getMaxX() - anchoMenu;
+            double posY = limitesBoton.getMaxY() + 5;
+
+            menuPopup.show(stage, posX, posY);
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

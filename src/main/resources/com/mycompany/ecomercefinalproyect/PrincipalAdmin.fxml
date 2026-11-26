@@ -37,7 +37,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnHeaderAdministrador" alignment="CENTER" layoutX="952.0" layoutY="28.0" mnemonicParsing="false" onAction="#mostrarAdmin" styleClass="boton-usuario" text="Administrador">
+                  <Button fx:id="btnHeaderAdministrador" alignment="CENTER" layoutX="952.0" layoutY="28.0" mnemonicParsing="false" onAction="#mostrarMenuAdmin" styleClass="boton-usuario" text="Administrador">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
