@@ -2,29 +2,37 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.MoldeProductosListaDeseadosController">
+<GridPane alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ecomercefinalproyect.MoldeProductosListaDeseadosController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" minWidth="240.0" prefWidth="240.0" maxWidth="240.0" />
+      <ColumnConstraints hgrow="NEVER" minWidth="680.0" prefWidth="680.0" maxWidth="680.0" />
+      <ColumnConstraints hgrow="NEVER" minWidth="264.0" prefWidth="264.0" maxWidth="264.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <Label id="productos" fx:id="Producto" stylesheets="@estilos/moldeProductosListaDeseados.css" text="Producto">
-         <HBox.margin>
-            <Insets right="150.0" />
-         </HBox.margin>
+      <Label id="productos" fx:id="Producto" maxWidth="Infinity" stylesheets="@estilos/moldeProductosListaDeseados.css" text="Producto" GridPane.columnIndex="0" GridPane.rowIndex="0">
          <padding>
-            <Insets left="20.0" right="120.0" />
+            <Insets left="20.0" right="20.0" />
          </padding>
       </Label>
-      <Label id="descripcion" fx:id="Descripcion" stylesheets="@estilos/moldeProductosListaDeseados.css" text="Productos">
+      <Label id="descripcion" fx:id="Descripcion" maxWidth="Infinity" wrapText="true" stylesheets="@estilos/moldeProductosListaDeseados.css" text="Productos" GridPane.columnIndex="1" GridPane.rowIndex="0">
          <padding>
-            <Insets right="120.0" />
+            <Insets left="20.0" right="20.0" />
          </padding>
-         <HBox.margin>
-            <Insets right="280.0" />
-         </HBox.margin>
       </Label>
-      <Label id="precio" fx:id="Precio" stylesheets="@estilos/moldeProductosListaDeseados.css" text="Precio" />
+      <Label id="precio" fx:id="Precio" maxWidth="Infinity" stylesheets="@estilos/moldeProductosListaDeseados.css" text="Precio" GridPane.columnIndex="2" GridPane.rowIndex="0">
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </Label>
    </children>
    <padding>
-      <Insets left="24.0" top="55.0" />
+      <Insets left="24.0" right="24.0" />
    </padding>
-</HBox>
+</GridPane>

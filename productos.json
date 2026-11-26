@@ -16,19 +16,91 @@
     "imagenURL": "/com/mycompany/ecomercefinalproyect/img/audifonos.png"
   },
   {
-    "nombre": "Sueter",
-    "categoria": "Ropa",
+    "nombre": "pato de hule",
+    "categoria": "Juguetes",
     "Stock": 10,
-    "precio": 70000.0,
-    "descripcion": "Nitido",
-    "imagenURL": "file:/C:/Users/garci/OneDrive/Documentos/NetBeansProjects/Ecomerce-javaFX/src/main/resources/com/mycompany/ecomercefinalproyect/img/Uniforme.png"
+    "precio": 3500.0,
+    "descripcion": "perfecto para que juegue tu hijo",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/images.png"
   },
   {
-    "nombre": "Gallo Fino",
+    "nombre": "camiseta azul",
+    "categoria": "Ropa",
+    "Stock": 10,
+    "precio": 45000.0,
+    "descripcion": "100% algodón, tipo polo",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Uniforme.png"
+  },
+  {
+    "nombre": "Portatil asus gris",
+    "categoria": "Electronica",
+    "Stock": 10,
+    "precio": 1400000.0,
+    "descripcion": "8 ram, i3 13th, 256gb ssd",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/laptop.png"
+  },
+  {
+    "nombre": "paleta de colores PATENTADA",
+    "categoria": "Hogar",
+    "Stock": 10,
+    "precio": 60000.0,
+    "descripcion": "colores representativos del tema dracula, perfecto para un IDE",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-09-21%2012-57-28.png"
+  },
+  {
+    "nombre": "planos para muralla de minecraft",
+    "categoria": "Juguetes",
+    "Stock": 10,
+    "precio": 12000.0,
+    "descripcion": "ladrillo tronco y escaleras es lo unico que necesitas, compra YA",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-07-30%2016-45-56.png"
+  },
+  {
+    "nombre": "cuadro de bob esponga elegante",
+    "categoria": "Hogar",
+    "Stock": 10,
+    "precio": 32000.0,
+    "descripcion": "30 x 40 cm, enmarcado engrapado",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-09-01%2015-08-09.png"
+  },
+  {
+    "nombre": "samsung a17",
+    "categoria": "Electronica",
+    "Stock": 10,
+    "precio": 416000.0,
+    "descripcion": "1 mes de uso, lo vendo porque la verdad no me gusta, me voy a comprar un haifon",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-09-14%2015-46-01.png"
+  },
+  {
+    "nombre": "set de stickers calcomanias",
+    "categoria": "Hogar",
+    "Stock": 10,
+    "precio": 8000.0,
+    "descripcion": "perfectos para indicar",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-09-22%2010-43-37.png"
+  },
+  {
+    "nombre": "planos de circuito electrico",
+    "categoria": "Electronica",
+    "Stock": 10,
+    "precio": 4000.0,
+    "descripcion": "usalo como quieras",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-09-26%2018-34-25.png"
+  },
+  {
+    "nombre": "diagrama pilas",
+    "categoria": "Hogar",
+    "Stock": 10,
+    "precio": 43000.0,
+    "descripcion": "impreso en 3d de manera vertical",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-10-20%2013-43-46.png"
+  },
+  {
+    "nombre": "Gallo fino",
     "categoria": "Alimentos",
     "Stock": 10,
     "precio": 800000.0,
-    "descripcion": "Gallo de raza pura",
-    "imagenURL": "file:/home/aser/Imágenes/Capturas%20de%20pantalla/Captura%20desde%202026-10-21%2016-02-46.png"
+    "descripcion": "gallo de raza pura, gana todas las peleas",
+    "imagenURL": "file:/home/aser/NetBeansProjects/ecomerceFinalProyect/src/main/resources/com/mycompany/ecomercefinalproyect/img/Captura%20desde%202026-10-21%2016-02-46.png"
   }
 ]
